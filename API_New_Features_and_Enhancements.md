@@ -26,15 +26,21 @@ Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
 The below information is now included in the response:
 
 * The date(YYYY-mm-dd) of the source's most recent update.
+
 * **Country ISO3 code:** Returns the country's ISO3 code.
+
 * **Country Code (optional):** Returns the country's 3 character code, if desired. "Ctrycode=y" gives the Worldbank's 3 character code for the country, region, income level, and/or lending types called. "Ctrycode=n" removes the country code from the response.
   - Example: <http://api.worldbank.org/v2/country/EAP/indicator/SL.AGR.EMPL.ZS?ctrycode=y>
+
 * **Footnote (optional):** Fetches footnote details in data calls, if desired. "Footnote=y" gives the footnote value for country, indicator and year. "Footnote=n" removes the footnote from the response.
   - Example: <http://api.worldbank.org/v2/country/chn/indicator/SL.AGR.EMPL.ZS?footnote=y>
+
 * **Automatic Scale of numbers (optional):** Data values will be scaled automatically in thousands, millions, billions or trillions. If the data is less than a thousand, no scaling will be applied. "Scale=y" gives the scale in the response.  "Scale=n" removes the scale from the response.
   - Example: <http://api.worldbank.org/v2/country/ind/indicator/SP.POP.TOTL?scale=y>
+
 * **Precision:** If the user requests for scaling, precision of decimal point will be based on the `<wb:decimal>` tag value, found in the response. If `<wb:decimal>` is 1 then the scaled value will have precision up to 1 decimal point. For example, if the data value is 2500 and `<wb:decimal>` is 1, then the data value will be scaled to 2.5 and `<wb:scale>` will read "thousands".
   - Example: <http://api.worldbank.org/v2/country/ind/indicator/SP.POP.TOTL?scale=y>
+  
 * **Observation Status:** Returns the observation status for country, indicator, and year combination. For example, <wb:Obs_status> F <wb:Obs_status>  in the response indicates that the observation status for that data point is "forecast".
   - Example: <http://api.worldbank.org/v2/countries/chn/indicators/NYGDPMKTPKDZ>
 
