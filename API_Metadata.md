@@ -16,7 +16,7 @@ Below is an example response to a Metadata query. Please refer to this example w
 <wb:metatype id="GovernmentAccountingconcept">Consolidated central government</wb:metatype>
 ```
 
-###Query Definitions
+### Query Definitions
 The following Metadata queries can be made through the Metadata API. Detailed explanations and examples are provided for each query type in the following pages. Please refer to the above response example when interpreting these explanations.
 
 **Source:** Retrieves information about the source database.
