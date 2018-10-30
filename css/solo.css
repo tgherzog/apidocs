@@ -1,11 +1,4 @@
----
----
-
-@import "normalize.css";
-@import "syntax.css";
-@import "clear-block.css";
-/* @import "rrssb.css"; */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,300italc,400,400italic,500,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italc,400,400italic,500,700);
 
 html {
   font: 18px/1.6 'Open Sans', sans-serif;
@@ -19,17 +12,7 @@ html {
 body {
   margin: 2rem 0 5rem;
   color: #222;
-
-  .footer {
-    font-size: 80%;
-	text-align: center;
-
-	p {
-	  margin: 0.5em 0;
-	}
-  }
 }
-
 
 @media (min-width: 30rem) {
   body {
@@ -54,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2
 }
 
-@media (max-width: 850px) {
+@media (max-width: 750px) {
 h1, h2, h3, h4, h5, h6 {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -63,23 +46,54 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 2.5rem;
+  margin-bottom: 7rem;
   font-weight: 700;
   margin-left: -2rem;
   margin-right: -2rem;
+}
+
+@media (min-width: 30rem) {
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 10rem;
+  }
+}
+
+h1 a {
+  color: inherit;
 }
 
 h2 {
   margin-top: 2rem;
   font-size: 1.75rem;
   font-weight: 500;
+  margin-bottom: 5rem;
   color: #555;
+  text-align: right;
   margin-right: -4rem;
+}
+
+@media (min-width: 30rem) {
+  h2 {
+    margin-top: 2.5rem;
+    font-size: 1.75rem;
+    margin-bottom: 8rem;
+    margin-right: -4rem;
+  }
 }
 
 h3 {
   margin: 2rem -2rem 1.75rem -2rem;
   margin-top: 2rem;
   font-size: 1.75rem;
+}
+
+@media (min-width: 30rem) {
+  h3 {
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 h4, h5, h6 {
@@ -137,63 +151,10 @@ a {
 word-wrap: break-word;
 }
 
-.container {
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 0 0.75rem;
-
-  img {
-    margin: 2em auto 2em auto;
-    display: block;
-  }
-
-  .screenshots {
-    >* {
-	  vertical-align: middle;
-	  float: left;
-	  padding-right: 1em;
-      margin-bottom: 1em;
-	}
-
-    p {
-      font-size: 0.75em;
-      text-align: center;
-      margin: 0;
-    }
-
-    img {
-      margin-bottom: 0;
-    }
-  }
-
-  .watches {
-    img {
-	  max-width: 200px;
-      margin-bottom: 18px;
-	}
-  }
-
-  .iPhone6s {
-    img {
-      max-width: 300px;
-    }
-  }
-
-  .sidebar-image {
-    float: right;
-	margin: 0 0 1em 1em;
-
-	img {
-	  margin: 0;
-	  max-width: 150px;
-	}
-  }
-}
-
-@media (max-width: 575px) {
-  .container .screenshots > * {
-    float: none;
-  }
+.container img {
+  margin: 2em auto 2em auto;
+  display: block;
+  max-width: 75%;
 }
 
 @media (max-width: 635px) {
@@ -206,10 +167,6 @@ table {
   width: 100%;
   border: 1px solid #ccc;
   border-collapse: collapse;
-}
-
-tr:nth-child(even) {
-  /* background: #eee; */
 }
 
 td, th {
@@ -235,6 +192,12 @@ pre > code {
   padding: 0;
 }
 
+.container {
+  max-width: 625px;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+}
+
 .sharing {
   text-align: center;
 }
@@ -243,10 +206,6 @@ pre > code {
   text-align: right;
   font-size: 75%;
   font-style: italic;
-}
-
-.app-store img {
-  width: 200px;
 }
 
 @media (max-width: 635px) {
@@ -306,4 +265,5 @@ pre > code {
 
 .sharing-buttons {
 	width: 100%;
+}
 }
