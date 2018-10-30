@@ -145,7 +145,7 @@ http://api.worldbank.org/v2/country/usa/indicator/sp.pop.totl/?downloadformat=ex
 
 Example Response:
 
-![*Data Format: Table*](response1.png)
+![*Data Format: Table*](images/response1.png)
 
 Example Request: 
 
@@ -154,7 +154,7 @@ http://api.worldbank.org/v2/country/usa/indicator/sp.pop.totl/?downloadformat=ex
 
 Example Response: 
 
-![*Data Format: List*](response2.png)
+![*Data Format: List*](images/response2.png)
 
 ### Metadata API Queries 
 
