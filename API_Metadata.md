@@ -288,7 +288,6 @@ To search the Metadata (in this example, for search term Solid Fuel):
             <wb:metatype id=" Statisticalconceptandmethodology">
                 Data for access to clean fuels and technologies for cooking are based on the the World Health Organization's (WHO) Global...
             </wb:metatype>
-            ...
           </wb:variable>
       </wb:concept>
     </wb:source>
