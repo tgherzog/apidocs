@@ -45,7 +45,7 @@ Advanced Data Queries allow you to retrieve data for any combination of multidim
 
 
 * **Data:** Retrieves data for any combination of Source and Concepts.
- - *Examples: 12341491960, etc.*
+  - *Examples: 12341491960, etc.*
    ```xml
     <wb:value>1241491960</wb:value>
    ```
@@ -69,9 +69,7 @@ To request information about all sources:
 
 ### Sample Response Format: Source Queries
 
-XML Request:
-<http://api.worldbank.org/v2/sources>
-
+* XML Request: <http://api.worldbank.org/v2/sources>
 ```xml
 <wb:sources xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="42">
 <wb:source id="11">
@@ -84,10 +82,7 @@ XML Request:
 </wb:source>
 ```
 
-
-JSON  Request:
-<http://api.worldbank.org/v2/sources?Format=json>
-
+* JSON Request: <http://api.worldbank.org/v2/sources?Format=json>
 ```json
 [
   {
@@ -109,29 +104,22 @@ JSON  Request:
 ]
 ```
 
-### Examples
-
-To request information about a particular source:
-<http://api.worldbank.org/v2/sources/57>
+* Examples
+To request information about a particular source: <http://api.worldbank.org/v2/sources/57>
 
 ## Concept Queries
-
 This call will return the following information, when available, about concepts of a specific source.
 * Source ID
 * Concept ID
 * Concept Name
 
 ### Sample Request Formats: Concept Queries
-
 To request a list of all available concepts:
 <http://api.worldbank.org/v2/sources/57/concepts/data>
 
-
 Sample Response Formats: Concept Queries
 
-* XML
-<http://api.worldbank.org/v2/sources/57/concepts/data?format=xml>
-
+* XML Request: <http://api.worldbank.org/v2/sources/57/concepts/data?format=xml>
 ```xml
 <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="4">
   <wb:source id="57" name="WDI Database Archives">
@@ -143,9 +131,7 @@ Sample Response Formats: Concept Queries
 </wb:data>
 ```
 
-* JSON Request:
-<http://api.worldbank.org/v2/sources/57/concepts/data?format=json>
-
+* JSON Request: <http://api.worldbank.org/v2/sources/57/concepts/data?format=json>
 ```json
 {
   "page":1,
@@ -165,10 +151,8 @@ Sample Response Formats: Concept Queries
 }
 ```
 
-### Examples
-To retrieve a specific concept detail for a source (in this example, Concept ID is "Country" and Source is "WDI Database Archives" or source  57):
-<http://api.worldbank.org/v2/sources/57/concepts/Country/data>
-
+* Examples
+To retrieve a specific concept detail for a source (in this example, Concept ID is "Country" and Source is "WDI Database Archives" or source  57): <http://api.worldbank.org/v2/sources/57/concepts/Country/data>
 
 ## Concept Variables Queries
 This call will return the following information, when available, about concept variables of a specific source.
@@ -183,8 +167,7 @@ To request a list of all available variables in a concept:
 <http://api.worldbank.org/v2/sources/57/Country/data>
 
 ### Sample Response Formats: Concept Queries
-XML Request: <http://databankapiqa.worldbank.org/v2/sources/57/Country/data?format=xml>
-
+* XML Request: <http://databankapiqa.worldbank.org/v2/sources/57/Country/data?format=xml>
 ```xml
 <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="6" per_page="50" total="290">
 <wb:source id="57" name="WDI Database Archives">
@@ -195,8 +178,7 @@ XML Request: <http://databankapiqa.worldbank.org/v2/sources/57/Country/data?form
 <wb:variable id="ALB">Albania</wb:variable>
 ```
 
-JSON Request: <http://api.worldbank.org/v2/sources/57/country/data?format=json>
-
+* JSON Request: <http://api.worldbank.org/v2/sources/57/country/data?format=json>
 ```json
  {
    "page":1,
@@ -218,13 +200,12 @@ JSON Request: <http://api.worldbank.org/v2/sources/57/country/data?format=json>
    }]
  }
 ```
-### Examples
-To retrieve a specific concept variable detail for a source (in this example, concept ID is "Country", Country variable id is "ALB" and Source is WDI Database Archivesor source 57):
-<http://api.worldbank.org/v2/sources/57/Country/ALB/data>
+
+* Examples
+To retrieve a specific concept variable detail for a source (in this example, concept ID is "Country", Country variable id is "ALB" and Source is WDI Database Archivesor source 57): <http://api.worldbank.org/v2/sources/57/Country/ALB/data>
 
 
 ## Advanced Data Queries
-
 Data can be retrieved for any combination of Source and Concepts
 Sample Request Format: Advanced Data Queries
 The following request provides data for Country ALB (Albania), Series AG.AGR.TRAC.NO ( Agricultural machinery, tractors), Time 1975, Version 1997 Apr.
@@ -234,9 +215,7 @@ In this example, "Sources", "Country", "Series", "Time", and "Version" are all k
 
 ### Response Format: Advanced Data Queries
 
-XML Request:  
-<http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/yr1975/Version/199704/data?format=xml>
-
+* XML Request:   <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/yr1975/Version/199704/data?format=xml>
 ```XML
 <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="1" lastupdated="2017-07-13">
   <wb:source id="57" name="WDI Database Archives">
@@ -251,11 +230,8 @@ XML Request:
 </wb:data>
 ```
 
-
-JSON
-Request:  
-<http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data?format=json>
-
+* JSON
+Request:   <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data?format=json>
 ```json
 {
   "page":1,
@@ -282,13 +258,11 @@ Request:
   }
 ```
 
-Examples
-To retrieve all the data for one or more Concepts (in this case, the Concept is "time" and the value is "all"):
-<http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data>
-
+* Examples
+To retrieve all the data for one or more Concepts (in this case, the Concept is "time" and the value is "all"): <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data>
 
 ## Jsonstat Queries (BETA)
 Data can be retrieved in Jsonstat format.
 
-### Sample Request Format:
+### Sample Request Format: Jsonstat Queries
 <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data?format=jsonstat>

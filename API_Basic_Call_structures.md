@@ -7,9 +7,8 @@ output:
 # About Basic Call Structures
 The Indicators API supports two basic ways to build queries: a URL based structure and an argument based structure. For example, the following two requests will return the same data, a list of countries with income level classified as low income:
 
-Argument based: <http://api.worldbank.org/V2/countries?incomeLevel=LIC>
-
-URL based: <http://api.worldbank.org/V2/incomeLevels/LIC/countries>
+* Argument based: <http://api.worldbank.org/V2/countries?incomeLevel=LIC>
+* URL based: <http://api.worldbank.org/V2/incomeLevels/LIC/countries>
 
 ## Query Strings
 Requests support the following query strings.
@@ -20,7 +19,7 @@ Examples:
   * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000>
   * <http://api.worldbank.org/v2/countries/chn;bra/indicators/DPANUSSPB?date=2012M01>
 
-**A range is indicated using the colon (:) separator.**
+A range is indicated using the colon (:) separator.
 
 Examples:
   * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000:2001>
@@ -33,37 +32,18 @@ Examples:
 
 **Output Format:** API supports the following four output formats.
 
-* XML format:
-
-    <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=xml>
-
-*	JSON format:
-
-    <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=json>
-
-*	JSONP format:
-
-  <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonP&prefix=Getdata>
+* XML format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=xml>
+*	JSON format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=json>
+*	JSONP format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonP&prefix=Getdata>
   - _Note: For JSONP format, 'prefix' parameter must be specified._
-
-* JSON-stat format:
-
-  <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonstat>
+* JSON-stat format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonstat>
     - _Note: Refer <https://json-stat.org/> for more details._
 
 **Download Format:** API supports the following three download formats.
 
-*	CSV Download (Downloads to ZIP file):
-
-  <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=csv>
-
-*	XML Download (Downloads to ZIP file):
-
-  <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=xml>
-
-*	EXCEL Download (Downloads to ZIP file):
-
-  <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=excel>
+*	CSV Download (Downloads to ZIP file): <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=csv>
+*	XML Download (Downloads to ZIP file): <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=xml>
+*	EXCEL Download (Downloads to ZIP file): <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=excel>
 
 
 **Page:** For paging through large result-sets. This allows users to indicate the page number requested from the record-set.
@@ -134,8 +114,7 @@ Some countries are translated in their local languages. Any call to the API can 
 |uk	| Ukrainian|
 |vi	| Vietnamese|
 
-For example, to retrieve the country name of Vietnam in Vietnamese language you would use the following query:
-<http://api.worldbank.org/v2/vi/country/vir>
+For example, to retrieve the country name of Vietnam in Vietnamese language you would use the following query: <http://api.worldbank.org/v2/vi/country/vir>
 
 _Note: The translated local language country names are not available for all the countries._
 
@@ -159,9 +138,7 @@ For example, the following is a call for 2006 data on the GDP of Brazil:
 
 By default, all requests will respond with valid XML. To receive the response in JSON format, provide "format=json" in any request.
 
-## Sample API Response
-
-**Sample valid request response:**
+### Sample valid request response:
 
 ```xml
 <wb:sources xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="30">
@@ -174,7 +151,7 @@ By default, all requests will respond with valid XML. To receive the response in
 </wb:source>
 ```
 
-**Sample invalid request response:**
+### Sample invalid request response:
 
 1.
 ```xml
@@ -194,5 +171,5 @@ By default, all requests will respond with valid XML. To receive the response in
 _Note: See "Error Codes" for a full listing of possible errors._
 
 
-### Limitations
+## Limitations
 You cannot currently sort any requests. Generally results are returned in a reasonable order (i.e. alpha), but that order cannot be controlled.

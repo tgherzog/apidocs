@@ -19,11 +19,9 @@ Indicators represent data like total population, gross national income, energy u
 
 ## Sample Request Format: Indicator Query
 
-To request all indicators:
-<http://api.worldbank.org/v2/indicators>
+To request all indicators: <http://api.worldbank.org/v2/indicators>
 
-To request the indicator GDP (Current US$) using its indicator code, `NY.GDP.MKTP.CD`:
-<http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD>
+To request the indicator GDP (Current US$) using its indicator code, "NY.GDP.MKTP.CD": <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD>
 
 ## Sample Response Format: Indicator Query
 
@@ -80,6 +78,5 @@ To request the indicator GDP (Current US$) using its indicator code, `NY.GDP.MKT
 Sometimes indicators belong to multiple sources. To find an indicator from a specific source, the indicator's source ID must be provided as query parameter.
 
 For example:
-
 * <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD?source=11>
 * http://api.worldbank.org/v2/source/11/indicators/NY.GDP.MKTP.CD  

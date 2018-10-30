@@ -21,11 +21,9 @@ The following information will appear, when available, in the response when usin
 *	Latitude
 
 ## Sample Request Format: Country Query
-For XML format:
-<http://api.worldbank.org/v2/countries/br>
+For XML format: <http://api.worldbank.org/v2/countries/br>
 
-For JSON format:
-<http://api.worldbank.org/v2/countries/br?format=json>
+For JSON format: <http://api.worldbank.org/v2/countries/br?format=json>
 
 _Note: "br" is the two-letter ISO code for Brazil._
 

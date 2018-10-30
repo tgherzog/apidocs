@@ -16,6 +16,5 @@ The pages listed on the right hand side of this page describe the different type
 
 There are also third party applications and libraries that can make using the API easier depending on your objectives. See [Application Showcase](http://data.worldbank.org/developers/application-showcase) for more details.
 
-
 ## API Access / Authentication
 Until recently it was necessary to use an API key to make calls to the API. This has changed. You no longer need an API key.

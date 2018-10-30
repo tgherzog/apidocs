@@ -12,7 +12,7 @@ Income levels show the income category of a particular country as identified by 
 To list all income levels:
 <http://api.worldbank.org/v2/incomeLevels>
 
-### Sample Response Format:  Income Level Query
+### Sample Response Format: Income Level Query
 
 * XML: <http://api.worldbank.org/v2/incomeLevels?format=xml>
 
@@ -49,10 +49,6 @@ To list all income levels:
 ## Filtering by Income Level
 It is not common to query income level directly. It is more common to use income level as a way to delimit other calls. For example:
 
-1. To show a list of countries of the "Lower middle income" level, use the following call:
+1. To show a list of countries of the "Lower middle income" level, use the following call: <http://api.worldbank.org/v2/countries?incomeLevel=LMC>
 
-    <http://api.worldbank.org/v2/countries?incomeLevel=LMC>
-
-2. To request a list of countries of the "Low income" level, use the following call:
-
-    <http://api.worldbank.org/v2/countries?incomeLevel=LIC>
+2. To request a list of countries of the "Low income" level, use the following call: <http://api.worldbank.org/v2/countries?incomeLevel=LIC>

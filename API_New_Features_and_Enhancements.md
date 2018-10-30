@@ -21,7 +21,6 @@ Examples:
   * <http://api.worldbank.org/v2/lendingtypes>
 
 ## Enhancements in the indicator data queries
-
 Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
 
 The below information is now included in the response:
@@ -40,8 +39,7 @@ The below information is now included in the response:
   - Example: <http://api.worldbank.org/v2/countries/chn/indicators/NYGDPMKTPKDZ>
 
 ## Enhancements in JSON responses for indicator data queries
-Example:
-<http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=json>
+Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=json>
 
 * Supports native JSON parser.
 * The "fact" data type is now a number.
@@ -51,7 +49,6 @@ Example:
 
 
 ### Local Languages
-
 Some countries are translated in their local languages. Any call to the API can be prefixed with a language code to retrieve localized results. The following local languages are available:
 
 |Code|Language|
@@ -81,7 +78,6 @@ A backslash followed by the country code gives localized results.  For example, 
 *Note: The translated local language country names are not available for all the countries.*
 
 ## New JSONstat response format option for indicator data queries (BETA):
-
 JSONstat is a simple lightweight JSON dissemination format best suited for data visualization, mobile apps or open data initiatives that has been designed for all kinds of disseminators.  Format=jsonstat' gives the JSONstat response.
 
 Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonstat>
