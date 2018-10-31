@@ -14,6 +14,7 @@ For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
 * ISO2 code is available for Region, Income Level & Lending Type.
 
 Examples:
+
   * <http://api.worldbank.org/v2/countries>
     - *Note: this call also list regions, incomelevels and lendingtypes along with countries. This helps in filtering country calls using regions/incomelevels/lendingtypes.*
   * <http://api.worldbank.org/v2/regions>
@@ -40,7 +41,7 @@ The below information is now included in the response:
 
 * **Precision:** If the user requests for scaling, precision of decimal point will be based on the `<wb:decimal>` tag value, found in the response. If `<wb:decimal>` is 1 then the scaled value will have precision up to 1 decimal point. For example, if the data value is 2500 and `<wb:decimal>` is 1, then the data value will be scaled to 2.5 and `<wb:scale>` will read "thousands".
   - Example: <http://api.worldbank.org/v2/country/ind/indicator/SP.POP.TOTL?scale=y>
-  
+
 * **Observation Status:** Returns the observation status for country, indicator, and year combination. For example, <wb:Obs_status> F <wb:Obs_status>  in the response indicates that the observation status for that data point is "forecast".
   - Example: <http://api.worldbank.org/v2/countries/chn/indicators/NYGDPMKTPKDZ>
 

@@ -12,10 +12,12 @@ The World Bank classifies countries according to the type of lending for which t
 Lending type can be used to narrow country or indicator queries.
 
 For example:
+
 1.	To see a list of IDA only countries, use the following call: <http://api.worldbank.org/v2/countries?lendingType=IDX>
 2.	To list all Lending Types: <http://api.worldbank.org/v2/lendingTypes>
 
 ### Sample Response Format: Lending Type Query
+
 * XML: <http://api.worldbank.org/v2/lendingTypes?format=xml>
 
 ```xml

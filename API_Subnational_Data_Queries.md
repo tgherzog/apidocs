@@ -15,12 +15,14 @@ Web developers can use this API in real time to support their own applications, 
 Requests support the following parameters.
 
 **Date or Date-Range:**
-  * Users can request data for a desired year by using the query string "date=______".  For example, "date=2007" will pull 2007 data.
-    - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007>
-  * Users can also request data than spans multiple years. A date-range is indicated using the colon separator (:).  For example, "date=2007:2010" will pull data from 2007 to 2010.
-    - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007:2010>
+
+* Users can request data for a desired year by using the query string "date=______".  For example, "date=2007" will pull 2007 data.
+  - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007>
+* Users can also request data than spans multiple years. A date-range is indicated using the colon separator (:).  For example, "date=2007:2010" will pull data from 2007 to 2010.
+  - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007:2010>
 
 **Response Formats:** The API supports four response formats.
+
 * XML format: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?format=xml>
 * JSON format: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?format=json>
 * JSONP format: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?format=jsonP&prefix=getdata>
@@ -28,16 +30,20 @@ Requests support the following parameters.
 * KML format: <http://api.worldbank.org/v2/subnational/ind/IN.TN?format=kml>
 
 **Download formats:** API supports two download formats.
+
 * CSV Download (Downloads to ZIP file): <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?downloadformat=csv>
 * EXCEL Download (Downloads to ZIP file): <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?downloadformat=excel>
 
 **Page:** For paging through large result-sets. This allows users to indicate the page number requested from the record-set.
+
 * Example: <http://api.worldbank.org/v2/subnationals/AO.BO;AO.ZA;AO.UI/indicators/SN.SH.STA.MALN.ZS?page=2>
 
 **Per_page:** For determining the number of results per page. The default setting is 50 results per page.
+
 * Example: <http://api.worldbank.org/v2/subnationals/AO.BO;AO.ZA;AO.UI/indicators/SN.SH.STA.MALN.ZS?per_page=25>
 
 **MRV:** For fetching most recent values based on the number specified.
+
 * Example: <http://api.worldbank.org/v2/subnationals/AO.BO;AO.ZA;AO.UI/indicators/SN.SH.STA.MALN.ZS?mrv=2>
 
 ## About Subnational List Queries
@@ -188,6 +194,7 @@ Sub-National Malnutrition prevalence, weight for age (% of children under 5)
 
 #### 1. Sample Request Format using Geocodes: Subnational Indicator Data
 To retrieve subnational indicator data based on Gadm code, Gaul code, UnSalb code and World Bank code you must provide both the desired location's geocode, as well as the desired indicator code.
+
   * Gadm Code: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS>
   * Gaul Code: <http://api.worldbank.org/v2/subnationals/398/indicators/SN.SH.STA.MALN.ZS>
   * UnSalb: <http://api.worldbank.org/v2/subnationals/AGO001/indicators/SN.SH.STA.MALN.ZS>
@@ -217,6 +224,7 @@ In this example, GAUL code is called: <http://api.worldbank.org/v2/subnational/I
 The Subnational API produces KML definition downloads for subnationals, which can be used in any map-based application that recognizes the KML format.
 
 ### Sample Request Format: KML Queries
+
 1. To request subnational KML definitions based on UnSalb code (in this example, for Tamil Nadu, India):
 <http://api.worldbank.org/v2/subnationals/ind/IND029?format=kml>
 2. To request subnational KML definitions based on Gadm code (in this example, for Tamil Nadu, India):
@@ -230,6 +238,8 @@ The Subnational API produces KML definition downloads for subnationals, which ca
 
 ## Subnational Indicator Data Download Queries
 Subnational indicator data can be downloaded in excel and csv formats by typing either "downloadformat=csv" or "downloadformat=excel" into the query string.
+
 **Sample Request Format: Subnational Indicator Data Download Queries**
+
 * CSV Download: <http://api.worldbank.org/v2/subnationals/398/indicators/SN.SH.STA.MALN.ZS?downloadformat=csv>
 * EXCEL Download: <http://api.worldbank.org/v2/subnationals/398/indicators/SN.SH.STA.MALN.ZS?downloadformat=excel>

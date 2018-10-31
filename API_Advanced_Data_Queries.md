@@ -54,6 +54,7 @@ Advanced Data Queries allow you to retrieve data for any combination of multidim
 ## Source Queries
 
 The following data source information will appear, when available, in the response.
+
 * Source ID
 * Source Name
 * WB Source Code
@@ -109,6 +110,7 @@ To request information about a particular source: <http://api.worldbank.org/v2/s
 
 ## Concept Queries
 This call will return the following information, when available, about concepts of a specific source.
+
 * Source ID
 * Concept ID
 * Concept Name
@@ -156,6 +158,7 @@ To retrieve a specific concept detail for a source (in this example, Concept ID 
 
 ## Concept Variables Queries
 This call will return the following information, when available, about concept variables of a specific source.
+
 * Source ID
 * Concept ID
 * Concept Name

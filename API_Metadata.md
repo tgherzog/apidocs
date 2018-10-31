@@ -20,34 +20,40 @@ Below is an example response to a Metadata query. Please refer to this example w
 The following Metadata queries can be made through the Metadata API. Detailed explanations and examples are provided for each query type in the following pages. Please refer to the above response example when interpreting these explanations.
 
 **Source:** Retrieves information about the source database.
+
 - Examples: World Development Indicators, Doing Business, International Debt Statistics, etc.
 ```xml
 <wb:source id="2" name="World Development Indicators">
 ```
 
 **Concept:** Retrieves source Concepts (also known as "dimensions" or combinations of dimensions).  
+
 - Examples: Country, Series, Country-Time, Country-Series, Time, etc.
 ```xml
 <wb:concept id="Country">
 ```
 
 **Metatype:** Retrieves the types of Metadata available. Meta types belong to Concept; each concept may have one or more Metatypes.
+
 - Examples: Region, Income Group, Periodicity, Source, etc.
 ```xml
 <wb:metatype id="2-alphacode">JP</wb:metatype>
 ```
 
 **Metadata:** Retrieves Metadata for any combination of Source, Concept and Metatype.
+
 - Examples: High Income, East Asia & Pacific, United States of America, 2012, etc.
 ```xml
 <wb:metatype id="2-alphacode">JP</wb:metatype>
 ```
 
 **Search:** Retrieves Metadata by using keywords in the query string.
+
 - Examples: Solid Fuel, United, South, etc.
 - <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 
 **Download:** Retrieves Metatype and their Metadata description in downloaded CSV and EXCEL files.
+
 - Examples: CSV, EXCEL, etc.
 - <http://api.worldbank.org/v2/sources/2/country/usa;jpn/series/SP.POP.TOTL/metadata?downloadformat=excel>
 
@@ -116,6 +122,7 @@ To request information about all sources:
 ## Concept Queries
 
 This call will return the following information, when available, about concepts of a specific source.
+
 * Source ID
 * Concept ID
 * Concept Name
@@ -125,6 +132,7 @@ To request a list of all available concepts:
 <http://api.worldbank.org/v2/sources/2/concepts/metadata>
 
 ### Sample Response Formats: Concept Queries
+
 * XML Request: <http://api.worldbank.org/v2/sources/2/concepts/metadata>
 ```xml
 <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total="7">
@@ -168,6 +176,7 @@ To request a list of all available concepts:
 
 ## Metatype Queries
 Metatype simply describes the type of metadata. Region, Income Group, Periodicity, and Source are all examples of Metatypes. Metatype calls retrieve lists of data types available for the given source. Metatype calls will return the following information in the response, when available.
+
 * Source ID
 * Concept ID
 * Metatype ID
@@ -178,6 +187,7 @@ To return a list of all available Metatypes for a specific source (in this case,
 <http://api.worldbank.org/v2/sources/2/metatypes>
 
 ### Sample Response Format: Metatype Queries
+
 * XML Request: <http://api.worldbank.org/v2/sources/2/metatypes>
 ```xml
   <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total=" 52">
@@ -259,6 +269,7 @@ The following request provides Metadata for Income Group in the United States an
 
 ## Search Queries
 Metadata API can be used to search Metadata. Search call will return the following information, when available:
+
 * Source ID
 * Concept ID and Name
 * Variable ID
@@ -269,8 +280,8 @@ To search the Metadata (in this example, for search term Solid Fuel):
 <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 
 ### Response Format
-* XML Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 
+* XML Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 ```xml
   <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total="17">
     <wb:source id="2">
@@ -286,7 +297,6 @@ To search the Metadata (in this example, for search term Solid Fuel):
 ```
 
 * JSON Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel?format=json>
-
 ```json
     {"page": 1,"pages": 1,"per_page": "5000","total": 5,"source": [{"ETime": null,"STime": null,"id": "2","concept": [{"id": "Series","variable": [{"id": "EG.CFT.ACCS.RU.ZS ","name": null,"metatype": [{"id": "Statisticalconceptandmethodology ","value": "Data for access to clean fuels and technologies for cooking are based on the the World Health Organization's (WHO) Global Household Energy Database.."}]},. . .
 ```
@@ -299,6 +309,7 @@ To search the Metadata (in this example, for search term Solid Fuel):
 Metadata can be downloaded along with Metatype and their Metadata description.
 
 ### Sample Request Format: Download Queries
+
 * CSV:
   <http://api.worldbank.org/v2/sources/2/country/usa;jpn/series/SP.POP.TOTL/metadata?downloadformat=csv>
 * EXCEL:

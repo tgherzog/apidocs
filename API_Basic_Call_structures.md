@@ -16,12 +16,14 @@ Requests support the following query strings.
 **Date and Date-Range:** Date-range by year, month or quarter that scopes the result-set.
 
 Examples:
+
   * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000>
   * <http://api.worldbank.org/v2/countries/chn;bra/indicators/DPANUSSPB?date=2012M01>
 
 A range is indicated using the colon (:) separator.
 
 Examples:
+
   * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000:2001>
   * <http://api.worldbank.org/v2/countries/chn;bra/indicators/DPANUSSPB?date=2012M01:2012M08>
   * <http://api.worldbank.org/v2/countries/CHL/indicators/DP.DOD.DECD.CR.BC.CD?date=2013Q1:2013Q4>
@@ -47,30 +49,38 @@ Examples:
 
 
 **Page:** For paging through large result-sets. This allows users to indicate the page number requested from the record-set.
+
 * Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?page=2>
 
 **Per_page:** For determining the number of results per page. The default setting is 50 results per page.
+
 * Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?per_page=25>
 
 **MRV:** fetches most recent values based on the number specified.
+
 * Example:  <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO?mrv=5>
 
 **MRNEV:** For fetching most recent non-empty values based on the number specified.
+
 * Example: <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO?mrnev=5>
 
 **Gap-fill:** (Y/N) Works with MRV. Fills values, if not available, by back tracking to the next available period (max number of periods back tracked will be limited by MRV number)
+
 * Example: <http://api.worldbank.org/v2/en/countries/ind;chn/indicators/DPANUSSPF?MRV=7&Gapfill=Y>
 
 **Frequency:** For fetching quarterly (Q), monthly (M) or yearly (Y) values. This feature currently works along with MRV. This query string is useful for querying high frequency data.
+
 * Example: <http://api.worldbank.org/v2/en/countries/ind;chn/indicators/DPANUSSPF?MRV=7&frequency=M>
 
 **Multiple Indicators Usage:** Multiple indicators data can be queried from a single data source by providing the indicator codes separated by `";"` (semicolon), as well as the source ID.
+
 * Example:
   <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO;SP.POP.TOTL?source=2>
 
 _Note: A maximum of 60 indicators can be used. A maximum of 1,500 characters are allowed between two back-slashes (/). A maximum of 4,000 characters are allowed in the entire URL._
 
 **Footnote:** For fetching footnote detail in data calls. `"footnote=y"` gives the footnote value for country, indicator and year.
+
 * Example:
   <http://api.worldbank.org/v2/country/chn/indicator/SL.AGR.EMPL.ZS?footnote=y>
 
