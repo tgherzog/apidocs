@@ -51,7 +51,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
 * *URL:* 
   
   
-    http://api.worldbank.org/v2/sdmx/rest/dataflow
+    <http://api.worldbank.org/v2/sdmx/rest/dataflow>
     
 
 * *Method:* 
@@ -80,7 +80,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
 * *Sample request and Output*
 
     + URL
-    http://api.worldbank.org/v2/sdmx/rest/dataflow
+    <http://api.worldbank.org/v2/sdmx/rest/dataflow>
     
     + Response
     ![Data Flow Sample Output](https://databank.worldbank.org/data/download/site-content/kb/api/Data_Flow_Sample_Output.png)
@@ -92,7 +92,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
 * URL: 
     
     
-    http://api.worldbank.org/v2/sdmx/rest/codelist/wb
+    <http://api.worldbank.org/v2/sdmx/rest/codelist/wb>
     
 * *Method:* 
 
@@ -118,7 +118,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
 * *Sample request and Output*
     
       + URL
-      http://api.worldbank.org/v2/sdmx/rest/codelist/wb
+      <http://api.worldbank.org/v2/sdmx/rest/codelist/wb>
     
       + Response:
       ![Code List Sample Output](https://databank.worldbank.org/data/download/site-content/kb/api/Code_List_Sample_Output.png)
@@ -131,7 +131,7 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
 * *URL:* 
   
   
-    http://api.worldbank.org/v2/sdmx/rest/datastructure/wb
+    <http://api.worldbank.org/v2/sdmx/rest/datastructure/wb>
     
 * *Method:* 
   
@@ -157,7 +157,7 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
 * *Sample request and Output*
 
     + URL
-    http://api.worldbank.org/v2/sdmx/rest/datastructure/wb
+    <http://api.worldbank.org/v2/sdmx/rest/datastructure/wb>
     
     + Response
     ![DSD Sample Response](https://databank.worldbank.org/data/download/site-content/kb/api/DSD_Sample_Output.png)
@@ -220,20 +220,20 @@ In data calls, the dimensions are separated by "." dot as shown below
 
 To request one country, one series  and a year
 
-    http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2011&endPeriod=2011
+    <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2011&endPeriod=2011>
 
 To request all countries, one series and a year
 
-    http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL./?startperiod=2011&endPeriod=2011
+    <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL./?startperiod=2011&endPeriod=2011>
 
 To request all series, one country and a year 
 
-    http://api.worldbank.org/v2/sdmx/rest/data/WDI/A..AFG/?startperiod=2011&endPeriod=2011
+    <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A..AFG/?startperiod=2011&endPeriod=2011>
 
 
 To request one country, one series and a range of year
 
-    http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2010&endPeriod=2015
+    <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2010&endPeriod=2015>
 
 
 
