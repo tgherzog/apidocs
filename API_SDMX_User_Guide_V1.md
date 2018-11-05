@@ -2,8 +2,6 @@
 title: "API: SDMX API User Guide"
 output:
   html_document:
-    toc: true
-    theme: cerulean
     keep_md: true
 
 ---
