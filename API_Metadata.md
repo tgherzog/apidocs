@@ -258,7 +258,32 @@ The following request provides Metadata for Income Group in the United States an
 
 * JSON Request: <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata?format=json>
 ```json
-    {"page": 1,"pages": 1,"per_page": "5000","total": 2,"source": [{"id": "2","name": "World Development Indicators","concept": [{"id": "Country","variable": [{"id": "JPN","metatype": [{"id": "IncomeGroup","value": "High income: OECD"}]},{"id": "USA","metatype": [{"id": "IncomeGroup","value": "High income: OECD"}]}]}]}]}. . .
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": "5000",
+      "total": 2,
+      "source": [{
+        "id": "2",
+        "name": "World Development Indicators",
+        "concept": [{
+          "id": "Country",
+          "variable": [
+            {
+            "id": "JPN",
+            "metatype": [{
+            "id": "IncomeGroup",
+          "value": "High income: OECD"
+        }]
+          },
+            {
+              "id": "USA","metatype": [{
+              "id": "IncomeGroup",
+              "value": "High income: OECD"}]
+            }]
+        }]
+      }]
+    }. . .
 ```
 
 * More Examples
@@ -301,7 +326,26 @@ To search the Metadata (in this example, for search term Solid Fuel):
 
 * JSON Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel?format=json>
 ```json
-    {"page": 1,"pages": 1,"per_page": "5000","total": 5,"source": [{"ETime": null,"STime": null,"id": "2","concept": [{"id": "Series","variable": [{"id": "EG.CFT.ACCS.RU.ZS ","name": null,"metatype": [{"id": "Statisticalconceptandmethodology ","value": "Data for access to clean fuels and technologies for cooking are based on the the World Health Organization's (WHO) Global Household Energy Database.."}]},. . .
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": "5000",
+      "total": 5,
+      "source": [{
+        "ETime": null,
+        "STime": null,
+        "id": "2","concept": [{
+          "id": "Series",
+          "variable": [{
+            "id": "EG.CFT.ACCS.RU.ZS ",
+            "name": null,
+            "metatype": [{
+            "id": "Statisticalconceptandmethodology ",
+            "value": "Data for access to clean fuels and technologies for cooking are based on the the World Health Organization's (WHO) Global Household Energy Database.."}]
+          }]
+        }]
+      }]
+    }. . .
 ```
 
 * Examples

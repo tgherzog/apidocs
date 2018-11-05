@@ -2,8 +2,6 @@
 title: "API: SDMX API User Guide"
 output:
   html_document:
-    toc: true
-    theme: cerulean
     keep_md: true
 
 ---
@@ -55,22 +53,24 @@ This end-point retrieves the unique dataset code for World bank dataset.
   
     http://api.worldbank.org/v2/sdmx/rest/dataflow
     
+
 * *Method:* 
     
     
     GET 
     
+
 * *URL Parameter:* 
     
     
     None 
     
-* *Response Format: *
+* *Response Format:*
     
     
     XML 
     
-* *Success Response: *
+* *Success Response:*
     
     
     HTTP Response Status Code: 200
@@ -99,17 +99,17 @@ This end-point retrieves the unique dataset code for World bank dataset.
     
     GET 
      	
-* *URL Parameter: *
+* *URL Parameter:*
 
     
     None 
     	
-* *Response Format: *
+* *Response Format:*
 
     
     XML 
      	
-* *Success Response: *
+* *Success Response:*
 
     
         HTTP Response Status Code: 200  
@@ -163,7 +163,7 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
     ![DSD Sample Response](https://databank.worldbank.org/data/download/site-content/kb/api/DSD_Sample_Output.png)
 
     
-* *Error Response: *
+* *Error Response:*
 
     The following error response is returned for invalid parameter value. 
     
