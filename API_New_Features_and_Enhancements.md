@@ -4,10 +4,10 @@ output:
   html_document:
     keep_md: true
 ---
+# New Features and Enhancements Found in V2 API
+
 **Note: To use the V2 API, you must place v2 in the call.**
 For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
-
-# New Features and Enhancements Found in V2 API
 
 * The API now returns ISO 3 and ISO 2 codes for all the countries along with country name, region, admin region, income level, lending type, Capital City, geographical co-ordinates.
 * The 2-letter codes for Region, admin Region, Income Level and Lending Type are assigned and used by The World Bank.
