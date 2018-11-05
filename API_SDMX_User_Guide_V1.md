@@ -83,7 +83,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
     http://api.worldbank.org/v2/sdmx/rest/dataflow
     
     + Response
-    ![Data Flow Sample Output](images/Data_Flow_Sample_Output.png)
+    ![Data Flow Sample Output](https://databank.worldbank.org/data/download/site-content/kb/api/Data_Flow_Sample_Output.png)
     
 ### Code List 
 
@@ -121,7 +121,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
       http://api.worldbank.org/v2/sdmx/rest/codelist/wb
     
       + Response:
-      ![Code List Sample Output](images/Code_List_Sample_Output.png)
+      ![Code List Sample Output](https://databank.worldbank.org/data/download/site-content/kb/api/Code_List_Sample_Output.png)
     
      
 ### Data Structure Definition (DSD) 
@@ -160,7 +160,7 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
     http://api.worldbank.org/v2/sdmx/rest/datastructure/wb
     
     + Response
-    ![DSD Sample Response](images/DSD_Sample_Output.png)
+    ![DSD Sample Response](https://databank.worldbank.org/data/download/site-content/kb/api/DSD_Sample_Output.png)
 
     
 * *Error Response: *
@@ -170,7 +170,7 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
         HTTP Response Status Code: 404 
         Content: Invalid structure code 
         
-    ![DSD Sample Error Response](images/DSD_Sample_Output_Error.png)
+    ![DSD Sample Error Response](https://databank.worldbank.org/data/download/site-content/kb/api/DSD_Sample_Output_Error.png)
  
 
 # Data Request
@@ -242,17 +242,17 @@ To request one country, one series and a range of year
 
 SDMX-ML 2.1 generic schema
 
-![](images/generic_schema.png)
+![](https://databank.worldbank.org/data/download/site-content/kb/api/generic_schema.png)
 
 
 SDMX-ML 2.1 structure specific schema
 
-![](images/structure_specific_schema.png)
+![](https://databank.worldbank.org/data/download/site-content/kb/api/structure_specific_schema.png)
 
 
 JSON Format
 
-![](images/json_format.png)
+![](https://databank.worldbank.org/data/download/site-content/kb/api/json_format.png)
 
 
 The response contains the result value of the Country, Series, Time and Frequency combination.
@@ -261,5 +261,5 @@ If we are not specifying any of the dimension in the request URL, all the data r
 
 Error Response: 
 
-![ ](images/error_response.png)
+![ ](https://databank.worldbank.org/data/download/site-content/kb/api/error_response.png)
 
