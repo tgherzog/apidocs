@@ -8,7 +8,7 @@ layout: default
 
 Existing Page              | Action/Replacement
 ------                     | ------------
-Developer Information: Overview       | Keep: add overview of sources, add link to [third party apps and modules][1]
+Developer Information: Overview       | [API_Overview](API_Overview.html)
 API: Documentation                    | [API_V2_Documentation](API_V2_Documentation.html)
 (new page)                            | [API_New_Features_and_Enhancements](API_New_Features_and_Enhancements.html)
 API: Basic Call Structure             | [API_Basic_Call_structures](API_Basic_Call_structures.html)
