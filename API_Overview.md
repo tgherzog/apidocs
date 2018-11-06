@@ -7,7 +7,6 @@ World Bank APIs provide access to various types of data and databases:
 
 * The **Indicators API** provides programmatic access to time series development data and metadata.
   Most of the articles in this section are devoted to the Indicators API.
-  [Learn More](https://datahelpdesk.worldbank.org/knowledgebase/articles/898581)
 
 * The **Data Catalog API** provides information about the thousands of development-relevant
   datasets available through the [World Bank Data Catalog](https://datacatalog.worldbank.org).
