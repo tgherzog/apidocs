@@ -34,7 +34,7 @@ limits:
   instead of the entire package list. You will need to make multiple API calls to return
   the entire list, using the `limit` query parameter to adjust the response size, and the
   `offset` parameter to return sequential pages. A `limit` value of no more than 50 seems to
-  provide reasonable peformance. The request below demonstrates how to return the 3rd page
+  provide reasonable peformance. For example, the request below demonstrates how to return the 3rd page
   of 20 search results (i.e., datasets 41-60):
 
   <https://datacatalog.worldbank.org/api/3/action/current_package_list_with_resources?limit=20&offset=40>
