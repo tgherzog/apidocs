@@ -29,3 +29,5 @@ limits:
   of 20 search results (i.e., datasets 41-60):
 
   `https://datacatalog.worldbank.org/api/3/action/current_package_list_with_resources?limit=20&offset=40`
+
+[ckan]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html
