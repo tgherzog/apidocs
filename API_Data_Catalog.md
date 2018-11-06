@@ -12,7 +12,7 @@ service.
 
 All Data Catalog API endpoints follow the form:
 
-<https://datacatalog.worldbank.org/api/3/action/action_name>
+<https://datacatalog.worldbank.org/api/3/action/[action_name]>
 
 where *action_name* is one of the supported endpoints discussed below.
 
