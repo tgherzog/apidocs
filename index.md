@@ -25,7 +25,7 @@ API: Aggregates - Regions and Income Levels | [API_Aggregates_Regions_and_Income
 (new page)                            | [SDMX](API_SDMX_User_Guide_V1.html)
 API: Error Codes                      | Raj to Review
 API: Sources                          | Delete: add brief discussion to Overview above
-Data Catalog API                      | Replace (link to DKAN docs and/or Meera's docs)
+Data Catalog API                      | [API_Data_Catalog](API_Data_Catalog.html)
 Climate Data API                      | Keep as-is
 Development Best Practices            | Keep?
 wbopendata: Stata module to access World Bank databases | Delete (confirm with JP)
