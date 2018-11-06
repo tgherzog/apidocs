@@ -16,18 +16,21 @@ All Data Catalog API endpoints follow the form:
 
 where *action_name* is one of the supported endpoints discussed below.
 
+
+### Changes from the CKAN-compatible API ###
+
 API users should refer to the [CKAN Dataset API][ckan], with the following changes and
 limits:
 
-* Support is limited to the `site_read`, `package_list`, `current_package_list_with_resources`,
-  `package_show` and `resource_show` endpoints
+* Support is limited to the [site_read,][1] [package_list][2], [current_package_list_with_resources][3],
+  [package_show][4] and [resource_show][5] endpoints
 
-* `package_list` returns uuid strings as dataset identifiers instead of package names
+* [package_list][1] returns uuid strings as dataset identifiers instead of package names
 
-* `package_show` and `resource_show` accept either uuid's or Drupal node IDs (nid's) as the `id`
+* [package_show][4] and [resource_show][5] accept either uuid's or Drupal node IDs (nid's) as the `id`
   query parameter. Both are included in the response from these endpoints.
 
-* For performance reasons, `current_page_list_with_resources` returns 150 packages by default
+* For performance reasons, [current_page_list_with_resources][3] returns 150 packages by default
   instead of the entire package list. You will need to make multiple API calls to return
   the entire list, using the `limit` query parameter to adjust the response size, and the
   `offset` parameter to return sequential pages. A `limit` value of no more than 50 seems to
@@ -37,3 +40,9 @@ limits:
   <https://datacatalog.worldbank.org/api/3/action/current_package_list_with_resources?limit=20&offset=40>
 
 [ckan]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html
+
+[1]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html#site-read
+[2]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html#package-list
+[3]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html#current-package-list-with-resources
+[4]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html#package-show
+[5]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html#resource-show
