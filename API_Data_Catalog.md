@@ -10,6 +10,12 @@ The Data Catalog is built on the [DKAN platform](https://getdkan.org). DKAN prov
 reading metadata from the data catalog; the World Bank's Data Catalog API is based on this
 service.
 
+All Data Catalog API endpoints follow the form:
+
+<https://datacatalog.worldbank.org/api/3/action/action_name>
+
+where *action_name* is one of the supported endpoints discussed below.
+
 API users should refer to the [CKAN Dataset API][ckan], with the following changes and
 limits:
 
@@ -28,6 +34,6 @@ limits:
   provide reasonable peformance. The request below demonstrates how to return the 3rd page
   of 20 search results (i.e., datasets 41-60):
 
-  `https://datacatalog.worldbank.org/api/3/action/current_package_list_with_resources?limit=20&offset=40`
+  <https://datacatalog.worldbank.org/api/3/action/current_package_list_with_resources?limit=20&offset=40>
 
 [ckan]: https://dkan.readthedocs.io/en/latest/apis/ckan-dataset.html
