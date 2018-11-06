@@ -1,7 +1,7 @@
 ---
 ---
 
-**About World Bank APIs**
+# About World Bank APIs #
 
 World Bank APIs provide access to various types of data and databases:
 
@@ -26,7 +26,7 @@ World Bank APIs provide access to various types of data and databases:
   [Learn More](https://datahelpdesk.worldbank.org/knowledgebase/articles/902061)
 
 
-**About the Indicators API**
+## About the Indicators API ##
 
 The World Bank Indicators API provides access to nearly 16,000 time series indicators.
 Most of these indicators are available online through tools such as [Databank](https://databank.worldbank.org) and
@@ -44,13 +44,13 @@ The Indicators API provides access to over 45 databases, including:
 
 Get started by reading about the [Basic Call Structure](https://datahelpdesk.worldbank.org/knowledgebase/articles/898581).
 
-**Applications**
+## Applications ##
 
 You are encouraged to develop software applications that utilize and add
 value to World Bank datasets. Many [third party applications][3rd-party] have already been developed, including
 integration modules for Drupal, R, Python and STATA. [Learn More][3rd-party]
 
-**Terms and conditions**
+## Terms and Conditions ##
 
 The use of World Bank datasets listed in the Data Catalog is governed by
 a specific [Terms of Use for World Bank Data][data-terms]. The use of the APIs

@@ -137,7 +137,7 @@ _Note: The translated local language country names are not available for all the
 
 * Example: <http://api.worldbank.org/v2/country/us;ge/indicator/AG.AGR.TRAC.NO>
 
-### Examples
+## Examples
 Retrieving indicator data about countries is one common use of the API.
 
 For example, the following is a call for 2006 data on the GDP of Brazil:
