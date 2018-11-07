@@ -27,8 +27,8 @@ limits:
 
 * [package_list][1] returns uuid strings as dataset identifiers instead of package names
 
-* [package_show][4] and [resource_show][5] accept either uuid's or Drupal node IDs (nid's) as the `id`
-  query parameter. Both are included in the response from these endpoints.
+* [package_show][4] and [resource_show][5] accept uuid's, Drupal node IDs (nid's) or the value from the
+  `name` field as values for the `id` query parameter. All three are included in the response from these endpoints.
 
 * For performance reasons, [current_page_list_with_resources][3] returns 150 packages by default
   instead of the entire package list. You will need to make multiple API calls to return
