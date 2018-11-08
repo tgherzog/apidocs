@@ -1,11 +1,11 @@
 ---
+title: Metadata API Queries
 ---
-
-# About Metadata
 
 Metadata is data about data. It provides users with more information about the data such as where the data comes from, the way in which the data is measured, and the frequency with which the data is collected, just to name a few. For example, for the indicator Population (total), SP.POP.TOTL, the Metadata provides us with this indicator’s long definition, its sources, its periodicity, its methodology, etc.
 
 ## About Metadata Queries
+
 Below is an example response to a Metadata query. Please refer to this example when reading the query definitions below.
 
 ```xml

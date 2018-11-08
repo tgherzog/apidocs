@@ -1,10 +1,10 @@
 ---
-title: "API: Subnational Data Queries"
+title: Subnational Data API Queries
 output:
   html_document:
     keep_md: true
 ---
-# About Subnational Data Queries
+
 Selected indicators are available for "admin level 1" boundaries (the first subnational level) and can be called by the API.  "Admin level 1" boundaries are usually referred to as states, regions, or provinces within a country.   
 
 For example, the indicator Sub-National Malnutrition prevalence, weight for age (% of children under 5), or SN.SH.STA.MALN.ZS, is available for thirteen "admin level1" boundaries in El Salvador.  

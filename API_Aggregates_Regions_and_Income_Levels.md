@@ -1,5 +1,5 @@
 ---
-title: API Queries for Aggregated Regions
+title: Aggregate API Queries
 output:
   html_document:
     keep_md: true
@@ -59,10 +59,10 @@ To get the definition list of all Region codes:
 ]
 ```
 
-To get the definition list of all Income Level codes:
+To get the definition list of all Income Level codes:  
 <http://api.worldbank.org/v2/incomelevel>
 
-To get the definition list of all Lending Type codes:
+To get the definition list of all Lending Type codes:  
 <http://api.worldbank.org/v2/lendingtypes>
 
 Or you can retrieve a select list of regions, income levels or lending types,

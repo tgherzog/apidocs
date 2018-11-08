@@ -1,12 +1,10 @@
 ---
-title: "API: SDMX API User Guide"
+title: SDMX API Queries
 output:
   html_document:
     keep_md: true
 
 ---
-
-# Overview
 
 Use SDMX REST API to programmatically access databases that are available in Databank. At present the WDI (World Development Indicators) dataset is available through API, and we are planning to add more datasets soon. If you are interested in a specific dataset that are currently available in <a href="http://databank.worldbank.org/data/home.aspx">Databank</a>, please let us know by email at data@worldbank.org.
 
