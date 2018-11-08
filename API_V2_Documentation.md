@@ -10,7 +10,8 @@ The documentation in this section, the contents of which you can see to the righ
 ## How to use the V2 API
 API queries can be constructed by combining calls and query strings is explained below.
 
-To use the V2 API, you must place v2 in the call. For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
+To use the V2 API, you must place v2 in the call. For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>. Both "http" and "https"
+protocols are supported.
 
 The pages listed on the right hand side of this page describe the different types of requests you can make to the V2 API. Besides making calls to the API using an application or custom program, you can also put the "Example calls" URLs listed in the documentation or your own custom calls into a web browser and view the results. If you choose to receive the result in JSON format you can use the [JSON View](https://addons.mozilla.org/en-US/firefox/addon/10869/) Firefox plugin for easily viewing JSON results directly in Firefox.
 

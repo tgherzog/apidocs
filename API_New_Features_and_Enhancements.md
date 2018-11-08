@@ -122,10 +122,11 @@ Example Response:
 
 ![*Data Format: List*](https://databank.worldbank.org/data/download/site-content/kb/api/response2.png)
 
-## Metadata API Queries
+## New Data Types ##
 
-Metadata queries are now available through the API.  Please refer to the Metadata API query documentation at (url for metadata api documentation) for more information.
+* Metadata is now available via [Metadata API](https://datahelpdesk.worldbank.org/knowledgebase/articles/1886695-metadata-api-queries)
 
-## Subnational Data API Queries
+<!--
+* Subnational data is now available for select databases via the [Subnational Data API](link here)
+-->
 
-Subnational queries are now available through the API.  Please refer to the Subnational API query documentation at (url for subnational data api documentation) for more information.

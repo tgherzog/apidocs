@@ -77,7 +77,7 @@ in the response.
 * Source description
 * Source URL
 * Data availability: "Y" means indicator data is available for that source; "N" means it is not available.
-* Meta data availability: "Y" means Meta data is available for that source; "N" means it is not available.
+* Metadata availability: "Y" means metadata is available for that source; "N" means it is not available.
 
 ### Sample Request Format: Source Queries
 
