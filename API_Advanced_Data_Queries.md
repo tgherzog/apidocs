@@ -5,7 +5,7 @@ output:
     keep_md: true
 
 ---
-# About Advanced Data API Queries (BETA)
+## About Advanced Data API Queries (BETA) ##
 
 Below is an example response to an Advanced Data Query.  Please refer to this example when reading the query definitions below:
 ```xml

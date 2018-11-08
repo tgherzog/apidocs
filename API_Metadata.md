@@ -20,40 +20,45 @@ Below is an example response to a Metadata query. Please refer to this example w
 ```
 
 ### Query Definitions
+
 The following Metadata queries can be made through the Metadata API. Detailed explanations and examples are provided for each query type in the following pages. Please refer to the above response example when interpreting these explanations.
 
 **Source:** Retrieves information about the source database.
 
-- Examples: World Development Indicators, Doing Business, International Debt Statistics, etc.
+Examples: World Development Indicators, Doing Business, International Debt Statistics, etc.
+
 ```xml
 <wb:source id="2" name="World Development Indicators">
 ```
 
 **Concept:** Retrieves source Concepts (also known as "dimensions" or combinations of dimensions).  
 
-- Examples: Country, Series, Country-Time, Country-Series, Time, etc.
+Examples: Country, Series, Country-Time, Country-Series, Time, etc.
+
 ```xml
 <wb:concept id="Country">
 ```
 
 **Metatype:** Retrieves the types of Metadata available. Meta types belong to Concept; each concept may have one or more Metatypes.
 
-- Examples: Region, Income Group, Periodicity, Source, etc.
+Examples: Region, Income Group, Periodicity, Source, etc.
+
 ```xml
 <wb:metatype id="2-alphacode">JP</wb:metatype>
 ```
 
 **Metadata:** Retrieves Metadata for any combination of Source, Concept and Metatype.
 
-- Examples: High Income, East Asia & Pacific, United States of America, 2012, etc.
+Examples: High Income, East Asia & Pacific, United States of America, 2012, etc.
+
 ```xml
 <wb:metatype id="2-alphacode">JP</wb:metatype>
 ```
 
 **Search:** Retrieves Metadata by using keywords in the query string.
 
-- Examples: Solid Fuel, United, South, etc.
-- <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
+Examples: Solid Fuel, United, South, etc.  
+<http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 
 **Download:** Retrieves Metatype and their Metadata description in downloaded CSV and EXCEL files.
 
@@ -76,12 +81,12 @@ in the response.
 
 ### Sample Request Format: Source Queries
 
-To request information about all sources:
+To request information about all sources:  
 <http://api.worldbank.org/v2/sources>
 
 ### Sample Response Format: Source Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources>
+**XML:** <http://api.worldbank.org/v2/sources>
 
 ```xml
 <wb:sources xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="30">
@@ -94,7 +99,7 @@ To request information about all sources:
     <wb:metadataavailability>Y</wb:metadataavailability>
 </wb:source>
 ```
-* JSON Request: <http://api.worldbank.org/v2/sources?Format=json>
+**JSON:** <http://api.worldbank.org/v2/sources?format=json>
 
 ```json
 [
@@ -119,8 +124,8 @@ To request information about all sources:
 ```
 
 * More Examples
-  - To request information about a particular source:
-<http://api.worldbank.org/v2/sources/2>
+  - To request information about a particular source:  
+    <http://api.worldbank.org/v2/sources/2>
 
 ## Concept Queries
 
@@ -131,12 +136,14 @@ This call will return the following information, when available, about concepts 
 * Concept Name
 
 ### Sample Request Formats: Concept Queries
-To request a list of all available concepts:
+
+To request a list of all available concepts:  
 <http://api.worldbank.org/v2/sources/2/concepts/metadata>
 
 ### Sample Response Formats: Concept Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources/2/concepts/metadata>
+**XML:** <http://api.worldbank.org/v2/sources/2/concepts/metadata>
+
 ```xml
 <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total="7">
 <wb:source id="2" name="World Development Indicators">
@@ -151,7 +158,8 @@ To request a list of all available concepts:
 </wb:metadata>
 ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/2/concepts/metadata?format=json>
+**JSON:** <http://api.worldbank.org/v2/sources/2/concepts/metadata?format=json>
+
 ```json
   {
     "page": 1,
@@ -175,9 +183,11 @@ To request a list of all available concepts:
 ```
 
 * Examples
-  - To retrieve a specific concept detail for a source (in this example, concept ID is Country and Source is World Development Indicators): <http://api.worldbank.org/v2/sources/2/concepts/country/metadata>
+  - To retrieve a specific concept detail for a source (in this example, concept ID is Country and Source is World Development Indicators):  
+    <http://api.worldbank.org/v2/sources/2/concepts/country/metadata>
 
 ## Metatype Queries
+
 Metatype simply describes the type of metadata. Region, Income Group, Periodicity, and Source are all examples of Metatypes. Metatype calls retrieve lists of data types available for the given source. Metatype calls will return the following information in the response, when available.
 
 * Source ID
@@ -186,12 +196,14 @@ Metatype simply describes the type of metadata. Region, Income Group, Periodicit
 * Metatype detail
 
 ### Sample Request Format: Metatype Queries
-To return a list of all available Metatypes for a specific source (in this case, 2 or World Development Indicators):
+
+To return a list of all available Metatypes for a specific source (in this case, 2 or World Development Indicators):  
 <http://api.worldbank.org/v2/sources/2/metatypes>
 
 ### Sample Response Format: Metatype Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources/2/metatypes>
+**XML:** <http://api.worldbank.org/v2/sources/2/metatypes>
+
 ```xml
   <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total=" 52">
     <wb:source id="2">
@@ -205,7 +217,8 @@ To return a list of all available Metatypes for a specific source (in this case,
   </wb:metadata>
 ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/2/metatypes?format=json>
+**JSON:** <http://api.worldbank.org/v2/sources/2/metatypes?format=json>
+
 ```json
   {
     "page": 1,
@@ -228,19 +241,23 @@ To return a list of all available Metatypes for a specific source (in this case,
 ```
 
 * More Examples
-  - The following call retrieves Meta types for a specific concept. In this example, "Country" is a concept ID for the source "2": <http://api.worldbank.org/v2/sources/2/concepts/country/metatypes>
+  - The following call retrieves Meta types for a specific concept. In this example, "Country" is a concept ID for the source "2":  
+    <http://api.worldbank.org/v2/sources/2/concepts/country/metatypes>
 
 ## Metadata Queries
+
 Metadata can be retrieved for any combination of Source, Concept and Metatype.
 
 ### Sample Request Format: Metadata Queries
+
 The following request provides Metadata for Income Group in the United States and Japan. In this example, "Sources", "Country", "Metatypes", and "Metadata" are all keywords. "Usa;Jpn" belongs to the concept "Country" and "incomegroup" belongs to Metatypes.
 
 <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata>
 
 ### Sample Response Format: Metadata Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata>
+**XML:** <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata>
+
 ```xml
   <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total="2">
     <wb:source id="2">
@@ -256,7 +273,8 @@ The following request provides Metadata for Income Group in the United States an
   </wb:metadata>
 ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata?format=json>
+**JSON:** <http://api.worldbank.org/v2/sources/2/country/usa;jpn/metatypes/IncomeGroup/metadata?format=json>
+
 ```json
     {
       "page": 1,
@@ -283,19 +301,21 @@ The following request provides Metadata for Income Group in the United States an
             }]
         }]
       }]
-    }. . .
+    }
+    ...
 ```
 
 * More Examples
-  1. To retrieve all the Metadata for one Concept (in this case, the Concept is Country, and the Country is Japan):
-    - <http://api.worldbank.org/v2/sources/2/country/jpn/metadata>
+  1. To retrieve all the Metadata for one Concept (in this case, the Concept is Country, and the Country is Japan):  
+     <http://api.worldbank.org/v2/sources/2/country/jpn/metadata>
   2.  To retrieve Metadata for a combination of concepts (In this case,
     one of the Concepts is Country and the other is Series. United
     States and Japan belong to the Concept Country and SP.POP.TOTL
-    belongs to Series.):
-    - <http://api.worldbank.org/v2/sources/2/country/usa;jpn/series/SP.POP.TOTL/metadata>
+    belongs to Series.):  
+    <http://api.worldbank.org/v2/sources/2/country/usa;jpn/series/SP.POP.TOTL/metadata>
 
 ## Search Queries
+
 Metadata API can be used to search Metadata. Search call will return the following information, when available:
 
 * Source ID
@@ -304,12 +324,13 @@ Metadata API can be used to search Metadata. Search call will return the followi
 * Metatype ID and detail
 
 ### Request Format
-To search the Metadata (in this example, for search term Solid Fuel):
+To search the Metadata (in this example, for search term Solid Fuel):  
 <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
 
 ### Response Format
 
-* XML Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
+**XML:** <http://api.worldbank.org/v2/sources/2/search/solid%20fuel>
+
 ```xml
   <wb:metadata xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="5000" total="17">
     <wb:source id="2">
@@ -324,7 +345,8 @@ To search the Metadata (in this example, for search term Solid Fuel):
   </wb:metadata>
 ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/2/search/solid%20fuel?format=json>
+**JSON:** <http://api.worldbank.org/v2/sources/2/search/solid%20fuel?format=json>
+
 ```json
     {
       "page": 1,
@@ -349,10 +371,13 @@ To search the Metadata (in this example, for search term Solid Fuel):
 ```
 
 * Examples
-  1. To perform a search in a specific Concept (In this example, the search is within the concept "country" for values that contain "united" in its Metatypes): <http://api.worldbank.org/v2/sources/2/concepts/country/search/united>
-  2.  To perform search in specific a Metatype (In this example, the search is within the Metatype "region" for values that contain "south"): <http://api.worldbank.org/v2/sources/2/metatypes/region/search/south>
+  1. To perform a search in a specific Concept (In this example, the search is within the concept "country" for values that contain "united" in its Metatypes):  
+     <http://api.worldbank.org/v2/sources/2/concepts/country/search/united>
+  2. To perform search in specific a Metatype (In this example, the search is within the Metatype "region" for values that contain "south"):  
+     <http://api.worldbank.org/v2/sources/2/metatypes/region/search/south>
 
 ## Download Queries
+
 Metadata can be downloaded along with Metatype and their Metadata description.
 
 ### Sample Request Format: Download Queries
@@ -362,4 +387,5 @@ Metadata can be downloaded along with Metatype and their Metadata description.
 * EXCEL:
 <http://api.worldbank.org/v2/sources/2/country/usa;jpn/series/SP.POP.TOTL/metadata?downloadformat=excel>
 * Examples
-  - To download a search in specific concept (in this example, "Country-Series" is a concept and "AFG~1.1\_YOUTH.LITERACY.RATE" is a value): <http://api.worldbank.org/v2/Sources/34/Country-Series/AFG~1.1_YOUTH.LITERACY.RATE/metadata?downloadformat=csv>
+  - To download a search in specific concept (in this example, "Country-Series" is a concept and "AFG~1.1\_YOUTH.LITERACY.RATE" is a value):
+    <http://api.worldbank.org/v2/Sources/34/Country-Series/AFG~1.1_YOUTH.LITERACY.RATE/metadata?downloadformat=csv>
