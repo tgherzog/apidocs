@@ -1,10 +1,10 @@
 ---
-title: "API: Documentation V.2"
+title: About This API Documentation
 output:
   html_document:
     keep_md: true
 ---
-# About this documentation
+
 The documentation in this section, the contents of which you can see to the right side of the page, explains the different types of call that can be made to the V2 API.  It also explains each call's purpose, how to structure a specific call, what the response looks like, and provides examples.
 
 ## How to use the V2 API
@@ -17,4 +17,5 @@ The pages listed on the right hand side of this page describe the different type
 There are also third party applications and libraries that can make using the API easier depending on your objectives. See [Application Showcase](http://data.worldbank.org/developers/application-showcase) for more details.
 
 ## API Access / Authentication
-Until recently it was necessary to use an API key to make calls to the API. This has changed. You no longer need an API key.
+
+API keys and other authentication methods are no longer necessary to access the API.

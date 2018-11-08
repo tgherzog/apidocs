@@ -1,10 +1,9 @@
 ---
-title: "API: New Feature and Enhancements V2"
+title: "New Features and Enhancements in the V2 API"
 output:
   html_document:
     keep_md: true
 ---
-# New Features and Enhancements Found in V2 API
 
 **Note: To use the V2 API, you must place v2 in the call.**
 For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>

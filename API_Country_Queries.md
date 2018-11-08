@@ -1,10 +1,9 @@
 ---
-title: "API: Country Queries"
+title: Country API Queries
 output:
   html_document:
     keep_md: true
 ---
-# About Country Queries
 
 To list all countries: <http://api.worldbank.org/v2/countries>
 

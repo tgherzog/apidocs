@@ -1,10 +1,10 @@
 ---
-title: "API: Basic Call Structure Knit"
+title: API Basic Call Structures
 output:
   html_document:
     keep_md: true
 ---
-# About Basic Call Structures
+
 The Indicators API supports two basic ways to build queries: a URL based structure and an argument based structure. For example, the following two requests will return the same data, a list of countries with income level classified as low income:
 
 * Argument based: <http://api.worldbank.org/V2/countries?incomeLevel=LIC>
