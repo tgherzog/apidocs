@@ -1,7 +1,6 @@
 ---
+title: Data Catalog API
 ---
-
-# Data Catalog API #
 
 The **Data Catalog API** provides information about the thousands of development-relevant
 datasets available through the [World Bank Data Catalog](https://datacatalog.worldbank.org).
