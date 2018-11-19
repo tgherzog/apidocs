@@ -1,11 +1,11 @@
 ---
-title: "API: Advanced Data Queries"
+title: Advanced Data API Queries
 output:
   html_document:
     keep_md: true
 
 ---
-# About Advanced Data Queries (BETA)
+## About Advanced Data API Queries (BETA) ##
 
 Below is an example response to an Advanced Data Query.  Please refer to this example when reading the query definitions below:
 ```xml

@@ -1,10 +1,10 @@
 ---
-title: "API: Basic Call Structure Knit"
+title: API Basic Call Structures
 output:
   html_document:
     keep_md: true
 ---
-# About Basic Call Structures
+
 The Indicators API supports two basic ways to build queries: a URL based structure and an argument based structure. For example, the following two requests will return the same data, a list of countries with income level classified as low income:
 
 * Argument based: <http://api.worldbank.org/V2/countries?incomeLevel=LIC>
@@ -137,7 +137,7 @@ _Note: The translated local language country names are not available for all the
 
 * Example: <http://api.worldbank.org/v2/country/us;ge/indicator/AG.AGR.TRAC.NO>
 
-### Examples
+## Examples
 Retrieving indicator data about countries is one common use of the API.
 
 For example, the following is a call for 2006 data on the GDP of Brazil:

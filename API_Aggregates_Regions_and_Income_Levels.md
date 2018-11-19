@@ -1,29 +1,86 @@
 ---
-title: "API: Aggregates - Regions and Income Levels"
+title: Aggregate API Queries
 output:
   html_document:
     keep_md: true
 ---
-# About Aggregates - Regions and Income Levels
 
-In several instances in which you typically use a country ISO code it is possible to use regions and income level codes as well.
+Aggregates---by region, income level or lending group---are also available in the API.
+You can retrieve data for aggregates by using the appropriate code where you would
+otherwise specify a country.
 
-In the following call, "br" is the ISO2 code for Brazil, and "NY.GDP.MKTP.CD" is the indicator ID for GDP (current US$):
-<http://api.worldbank.org/v2/countries/br/indicators/NY.GDP.MKTP.CD>
+The following two examples retrieve GDP data for Brazil (BRA)
+and the Latin America and Caribbean region as a whole (LCN):
 
-In this example, you can substitute "br" with list region codes/Incomelevels.
+<http://api.worldbank.org/v2/countries/BRA/indicators/NY.GDP.MKTP.CD>  
+<http://api.worldbank.org/v2/countries/LCN/indicators/NY.GDP.MKTP.CD>
 
-## Region codes
-To get list of all region codes: <http://api.worldbank.org/v2/region>
+## Aggregate Definitions in the API ##
 
+To get the definition list of all Region codes:
 
-## Income level codes
-To get list of all income level codes:
+**XML**
+
+<http://api.worldbank.org/v2/region?format=xml>
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<wb:regions page="1" pages="1" per_page="50" total="48" xmlns:wb="http://www.worldbank.org">
+  <wb:region id="">
+    <wb:code>AFR</wb:code>
+    <wb:iso2code>A9</wb:iso2code>
+    <wb:name>Africa</wb:name>
+  </wb:region>
+  ...
+</wb:regions>
+```
+
+**JSON**
+
+<http://api.worldbank.org/v2/region?format=json>
+
+```
+[
+  {
+    "page": "1",
+    "pages": "1",
+    "per_page": "50",
+    "total": "48"
+  },
+  [
+    {
+      "id": "",
+      "code": "AFR",
+      "iso2code": "A9",
+      "name": "Africa"
+    },
+    ...
+  ]
+]
+```
+
+To get the definition list of all Income Level codes:  
 <http://api.worldbank.org/v2/incomelevel>
 
-## Requests by Income Level
-To query the GDP (current US$) for all Lower Middle Income (LMC) countries: <http://api.worldbank.org/v2/countries/lmc/indicators/NY.GDP.MKTP.CD>
+To get the definition list of all Lending Type codes:  
+<http://api.worldbank.org/v2/lendingtypes>
+
+Or you can retrieve a select list of regions, income levels or lending types,
+separating multiple codes with semicolons (;):
+
+<http://api.worldbank.org/v2/region/LCN>  
+<http://api.worldbank.org/v2/incomelevel/UMC>  
+<http://api.worldbank.org/v2/lendingtype/IBD;IDB>
+
+Querying a country shows you which aggregate groups it belongs to:
+
+<http://api.worldbank.org/v2/country/BRA>
+
+Conversely, you can apply a filter to see all countries in a specified aggregate:
+
+<http://api.worldbank.org/v2/country?region=LCN>  
+<http://api.worldbank.org/v2/country?incomelevel=UMC>  
+<http://api.worldbank.org/v2/country?lendingtype=IBD>
 
 
-## Requests by Region
-To query the GDP (current US$) for all countries in Latin America and the Caribbean (LAC): <http://api.worldbank.org/v2/countries/lac/indicators/NY.GDP.MKTP.CD>
+

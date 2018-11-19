@@ -1,10 +1,9 @@
 ---
-title: "API: Indicator Queries"
+title: Indicator API Queries
 output:
   html_document:
     keep_md: true
 ---
-# About Indicator Queries
 
 Indicators represent data like total population, gross national income, energy use, and many more. Indicator queries return the following information in the response:
 
@@ -80,4 +79,5 @@ Sometimes indicators belong to multiple sources. To find an indicator from a spe
 For example:
 
 * <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD?source=11>
-* http://api.worldbank.org/v2/source/11/indicators/NY.GDP.MKTP.CD  
+* <http://api.worldbank.org/v2/source/11/indicators/NY.GDP.MKTP.CD>
+

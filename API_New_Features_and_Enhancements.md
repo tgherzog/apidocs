@@ -1,10 +1,9 @@
 ---
-title: "API: New Feature and Enhancements V2"
+title: "New Features and Enhancements in the V2 API"
 output:
   html_document:
     keep_md: true
 ---
-# New Features and Enhancements Found in V2 API
 
 **Note: To use the V2 API, you must place v2 in the call.**
 For example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL>
@@ -123,10 +122,11 @@ Example Response:
 
 ![*Data Format: List*](https://databank.worldbank.org/data/download/site-content/kb/api/response2.png)
 
-## Metadata API Queries
+## New Data Types ##
 
-Metadata queries are now available through the API.  Please refer to the Metadata API query documentation at (url for metadata api documentation) for more information.
+* Metadata is now available via [Metadata API](https://datahelpdesk.worldbank.org/knowledgebase/articles/1886695-metadata-api-queries)
 
-## Subnational Data API Queries
+<!--
+* Subnational data is now available for select databases via the [Subnational Data API](link here)
+-->
 
-Subnational queries are now available through the API.  Please refer to the Subnational API query documentation at (url for subnational data api documentation) for more information.
