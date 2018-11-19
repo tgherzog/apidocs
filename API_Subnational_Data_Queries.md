@@ -20,7 +20,7 @@ Requests support the following parameters.
 
 * Users can request data for a desired year by using the query string "date=______".  For example, "date=2007" will pull 2007 data.
   - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007>
-* Users can also request data than spans multiple years. A date-range is indicated using the colon separator (:).  For example, "date=2007:2010" will pull data from 2007 to 2010.
+* Users can also request data than spans multiple years. A date-range is indicated using the colon separator ( : ).  For example, "date=2007:2010" will pull data from 2007 to 2010.
   - Example: <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?date=2007:2010>
 
 **Response Formats:** The API supports four response formats.
@@ -33,8 +33,8 @@ Requests support the following parameters.
 
 **Download formats:** API supports two download formats.
 
-* CSV Download (Downloads to ZIP file): <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?downloadformat=csv>
-* EXCEL Download (Downloads to ZIP file): <http://api.worldbank.org/v2/subnationals/AO.BO/indicators/SN.SH.STA.MALN.ZS?downloadformat=excel>
+* CSV Download (Downloads to ZIP file): <https://api.worldbank.org/v2/subnational/ind/IN.TN?downloadformat=csv>
+* EXCEL Download (Downloads to ZIP file): <https://api.worldbank.org/v2/subnational/ind/IN.TN?downloadformat=excel>
 
 **Page:** For paging through large result-sets. This allows users to indicate the page number requested from the record-set.
 
@@ -131,6 +131,7 @@ Example: <http://api.worldbank.org/v2/subnational/usa>
 
 To request all available subnational locations for multiple specified countries, again add the ISO or World Bank country codes to the end of the query, separated by semicolons (;).  In this example, Angola and India are used with the ISO codes "ago;ind".
 
+
 Example: <http://api.worldbank.org/v2/subnational/ago;ind>
 
 ### Admin-Level-Specific Subnational Requests
@@ -199,7 +200,26 @@ Sub-National Malnutrition prevalence, weight for age (% of children under 5)
 *TGH: json snippets should be pretty printed and include appropriate snippets, as per above*
 
 ```json
-[{"page": 1,"pages": 1,"per_page": "100","total": 5},[{"id": "SN.SH.STA.MALN.ZS","name": "Sub-National Malnutrition prevalence, weight for age (% of children under 5)","source": {"id": "5","value": "Subnational Malnutrition Database"},"sourceNote": null,"sourceOrganization": null,"topics": null}
+[
+	{
+		"page": 1,
+		"pages": 1,
+	"per_page": "100",
+"total": 5
+},
+[
+	{
+		"id": "SN.SH.STA.MALN.ZS",
+		"name": "Sub-National Malnutrition prevalence, weight for age (% of children under 5)",
+		"source": {
+					"id": "5",
+					"value": "Subnational Malnutrition Database"
+				},
+		"sourceNote": null,
+		"sourceOrganization": null,
+		"topics": null
+	}
+]
 ```
 
 ## Subnational Indicator Data Queries
@@ -241,8 +261,29 @@ Sub-National Malnutrition prevalence, weight for age (% of children under 5)
 
 ```json
 [
-  {
-    "page": 1,"pages": 1,"per_page": "100","lastupdated": "2013-11-26","total": 44},[{"indicator": {"id": "SN.SH.STA.MALN.ZS","value": "Sub-National Malnutrition prevalence, weight for age (% of children under 5)"},"subnational": {"id": "453","value": "Armenia, Aragatsotn"},"value": "","decimal": "0","date": "2012"},
+	{
+		"page": 1,
+		"pages": 1,
+		"per_page": "100",
+		"lastupdated": "2013-11-26",
+		"total": 44
+	},
+	[
+		{
+			"indicator": 
+						{
+							"id": "SN.SH.STA.MALN.ZS",
+							"value": "Sub-National Malnutrition prevalence, weight for age (% of children under 5)"
+						},
+			"subnational": 
+						{
+							"id": "453",
+							"value": "Armenia, Aragatsotn"
+						},
+			"value": "",
+			"decimal": "0",
+			"date": "2012"
+		}
 ```
 
 ### Examples
@@ -256,7 +297,7 @@ To retrieve subnational indicator data based on Gadm code, Gaul code, UnSalb cod
   * World Bank Indicator Code: <http://api.worldbank.org/v2/subnational/in.mp;in.up/indicator/SN.SH.STA.MALN.ZS>
 
 #### 2. Sample Request Format: Multiple Subnational Indicators
-To retrieve multiple subnational indicator data you must indicate both the indicator codes, separated by semi-colons (;) and the source code.  
+To retrieve multiple subnational indicator data you must indicate both the indicator codes, separated by semi-colons ( ; ) and the source code.  
 
 Example: <http://api.worldbank.org/v2/subnational/ARM_Ararat_AM.AR_454_ARM002/indicator/SN.SH.STA.MALN.ZS;SN.SH.STA.WAST.ZS?source=5>
 
@@ -305,3 +346,4 @@ Subnational indicator data can be downloaded in excel and csv formats by typing 
 
 * CSV Download: <http://api.worldbank.org/v2/subnationals/398/indicators/SN.SH.STA.MALN.ZS?downloadformat=csv>
 * EXCEL Download: <http://api.worldbank.org/v2/subnationals/398/indicators/SN.SH.STA.MALN.ZS?downloadformat=excel>
+
