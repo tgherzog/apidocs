@@ -1,1 +1,5 @@
-theme: jekyll-theme-modernist
+# theme: jekyll-theme-modernist
+highlighter: none
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
