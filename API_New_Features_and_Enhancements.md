@@ -4,12 +4,12 @@ output:
   html_document:
     keep_md: true
 ---
-Version 2 of the Indidators API has now been released! Version 1 of the API is no longer supported.
+Version 2 of the Indicators API has now been released! Version 1 of the API is no longer supported.
 
 **Note: To use the V2 API, you must place `v2` in the call.**
 For example: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL>
 
-## Improved metadata in reponses
+## Improved metadata in responses
 
 Metadata for countries and regions has been improved with the API now returning:
 * ISO 3 and ISO 2 codes for all countries along with country name, region, admin region, income level, lending type, capital city and geographical co-ordinates.
