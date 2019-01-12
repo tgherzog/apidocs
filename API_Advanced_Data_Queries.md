@@ -5,7 +5,7 @@ output:
     keep_md: true
 
 ---
-## About Advanced Data API Queries (BETA) ##
+### About Advanced Data API Queries (BETA)
 
 Below is an example response to an Advanced Data Query.  Please refer to this example when reading the query definitions below:
 ```xml
@@ -21,7 +21,7 @@ Below is an example response to an Advanced Data Query.  Please refer to this ex
 </wb:data>
 ```
 
-## Query Definitions
+### Query Definitions
 
 Advanced Data Queries allow you to retrieve data for any combination of multidimensional data sources and multidimensional concepts.  The following Advanced Data Queries can be made through the Metadata API. Detailed explanations and examples are provided for each query type in the following pages. Please refer to the above response example when interpreting these explanations.
 
@@ -56,6 +56,7 @@ Advanced Data Queries allow you to retrieve data for any combination of multidim
 
 The following data source information will appear, when available, in the response.
 
+* Date last updated
 * Source ID
 * Source Name
 * WB Source Code
@@ -63,26 +64,31 @@ The following data source information will appear, when available, in the respon
 * Source URL
 * Data availability: "Y" means indicator data is available for that source; "N" means it is not available.
 * Meta data availability: "Y" means Meta data is available for that source; "N" means it is not available.
+* Number of concepts
 
 ### Sample Request Format: Source Queries
 
 To request information about all sources:
-<http://api.worldbank.org/v2/sources>
+<http://api.worldbank.org/v2/source>
 
 ### Sample Response Format: Source Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources>
+* XML Request: <http://api.worldbank.org/v2/source>
 
   ```xml
   <wb:sources xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="42">
-  <wb:source id="11">
+  <wb:source lastupdated="2013-02-22" id="11">
   	<wb:name>Africa Development Indicators</wb:name>
-         <wb:code>ADI</wb:code>
+          <wb:code>ADI</wb:code>
   	<wb:description/>
   	<wb:url/>
   	<wb:dataavailability>Y</wb:dataavailability>
   	<wb:metadataavailability>Y</wb:metadataavailability>
-  </wb:source>
+    <wb:concepts>3</wb:concepts>
+ </wb:source>
+  ...
+  </wb:sources>
+
   ```
 
 * JSON Request: <http://api.worldbank.org/v2/sources?format=json>
@@ -103,13 +109,13 @@ To request information about all sources:
         "url": "",
         "dataavailability": "Y",
         "metadataavailability": "Y"      
-      }
+      },
+    ...
     ]
   ]
   ```
 
-* Example:
-to request information about a particular source: <http://api.worldbank.org/v2/sources/57>
+* To request information about a particular source: <http://api.worldbank.org/v2/source/2>
 
 ## Concept Queries
 This call will return the following information, when available, about concepts of a specific source.
@@ -120,38 +126,36 @@ This call will return the following information, when available, about concepts 
 
 ### Sample Request Formats: Concept Queries
 To request a list of all available concepts:
-<http://api.worldbank.org/v2/sources/57/concepts/data>
+<http://api.worldbank.org/v2/sources/2/concepts/data>
 
 Sample Response Formats: Concept Queries
 
-* XML Request: <http://api.worldbank.org/v2/sources/57/concepts/data?format=xml>
+* XML Request: <http://api.worldbank.org/v2/sources/2/concepts/data?format=xml>
 
   ```xml
-  <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="4">
-    <wb:source id="57" name="WDI Database Archives">
+  <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="3">
+    <wb:source id="2" name="World Development Indicators">
       <wb:concept id="Country">Country</wb:concept>
       <wb:concept id="Series">Series</wb:concept>
       <wb:concept id="Time">Time</wb:concept>
-      <wb:concept id="Version">Version</wb:concept>
     </wb:source>
   </wb:data>
   ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/57/concepts/data?format=json>
+* JSON Request: <http://api.worldbank.org/v2/sources/2/concepts/data?format=json>
 ```json
 {
   "page":1,
   "pages":1,
   "per_page":50,
-  "total":4,
+  "total":3,
   "source":[{
-    "id":"57",
-    "name":"WDI Database Archives",
+    "id":"2",
+    "name":"World Development Indicators",
     "concept":[
       {"id":"Country","value":"Country"},
       {"id":"Series","value":"Series"},
-      {"id":"Time","value":"Time"},
-      {"id":"Version","value":"Version"}
+      {"id":"Time","value":"Time"}
     ]
   }]
 }
@@ -171,32 +175,36 @@ This call will return the following information, when available, about concept v
 
 ### Sample Request Formats: Concept Variables Queries
 To request a list of all available variables in a concept:
-<http://api.worldbank.org/v2/sources/57/Country/data>
+<http://api.worldbank.org/v2/source/2/country/data>
 
 ### Sample Response Formats: Concept Queries
-* XML Request: <http://databankapiqa.worldbank.org/v2/sources/57/Country/data?format=xml>
+* XML Request: <http://api.worldbank.org/v2/sources/2/country/data?format=xml>
 
   ```xml
-  <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="6" per_page="50" total="290">
-  <wb:source id="57" name="WDI Database Archives">
-  <wb:concept id="country" name="country">
-  <wb:variable id="ABW">Aruba</wb:variable>
-  <wb:variable id="AFG">Afghanistan</wb:variable>
-  <wb:variable id="AGO">Angola</wb:variable>
-  <wb:variable id="ALB">Albania</wb:variable>
+  <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="6" per_page="50" total="264">
+    <wb:source id="2" name="World Development Indicators">
+      <wb:concept id="country" name="country">
+        <wb:variable id="ABW">Aruba</wb:variable>
+        <wb:variable id="AFG">Afghanistan</wb:variable>
+        <wb:variable id="AGO">Angola</wb:variable>
+        <wb:variable id="ALB">Albania</wb:variable>
+        ...
+      </wb:concept>
+    </wb:source>
+  </wb:data>
   ```
 
-* JSON Request: <http://api.worldbank.org/v2/sources/57/country/data?format=json>
+* JSON Request: <http://api.worldbank.org/v2/sources/2/country/data?format=json>
 
   ```json
    {
      "page":1,
      "pages":6,
      "per_page":50,
-     "total":290,
+     "total":264,
      "source":[{
-       "id":"57",
-       "name":"WDI Database Archives",
+       "id":"2",
+       "name":"World Development Indicators",
        "concept":[{
          "id":"country",
          "name":"country",
@@ -204,27 +212,29 @@ To request a list of all available variables in a concept:
            {"id":"ABW","value":"Aruba"},
            {"id":"AFG","value":"Afghanistan"},
            {"id":"AGO","value":"Angola"},
-           {"id":"ALB","value":"Albania"}]
+           {"id":"ALB","value":"Albania"},
+           ... 
+         ]
        }]
      }]
    }
   ```
 
 * Example:
-to retrieve a specific concept variable detail for a source (in this example, concept ID is "Country", Country variable id is "ALB" and Source is WDI Database Archivesor source 57): <http://api.worldbank.org/v2/sources/57/Country/ALB/data>
+to retrieve a specific concept variable detail for a source (in this example, concept ID is "Country", Country variable id is "ALB" and Source is World Development Indicators or source 2): <http://api.worldbank.org/v2/sources/57/Country/ALB/data>
 
 
 ## Advanced Data Queries
-Data can be retrieved for any combination of Source and Concepts
-Sample Request Format: Advanced Data Queries
-The following request provides data for Country ALB (Albania), Series AG.AGR.TRAC.NO ( Agricultural machinery, tractors), Time 1975, Version 1997 Apr.
+Data can be retrieved for any combination of Sources and Concepts.
 
-In this example, "Sources", "Country", "Series", "Time", and "Version" are all keywords: 	
-<http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/yr1975/Version/199704>
+Example: The following request provides data for Country ALB (Albania), Series AG.AGR.TRAC.NO ( Agricultural machinery, tractors), Time 1975, Version 1997 Apr.
+
+In this example, "sources", "country", "series", "time", and "version" are all keywords: 	
+<http://api.worldbank.org/v2/sources/57/country/ALB/series/AG.AGR.TRAC.NO/time/yr1975/version/199704>
 
 ### Response Format: Advanced Data Queries
 
-* XML Request:   <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/yr1975/Version/199704/data?format=xml>
+* XML Request:   <http://api.worldbank.org/v2/sources/57/country/ALB/series/AG.AGR.TRAC.NO/time/yr1975/version/199704/data?format=xml>
 
   ```XML
   <wb:data xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="1" lastupdated="2017-07-13">
@@ -241,7 +251,7 @@ In this example, "Sources", "Country", "Series", "Time", and "Version" are all k
   ```
 
 * JSON
-Request:   <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data?format=json>
+Request:   <http://api.worldbank.org/v2/sources/57/country/ALB/series/AG.AGR.TRAC.NO/time/all/version/199704/data?format=json>
 
   ```json
   {
@@ -272,10 +282,10 @@ Request:   <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRA
   ```
 
 * Example:
-to retrieve all the data for one or more Concepts (in this case, the Concept is "time" and the value is "all"): <http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data>
+to retrieve all the data for one or more Concepts (in this case, the Concept is "time" and the value is "all"): <http://api.worldbank.org/v2/sources/57/country/ALB/series/AG.AGR.TRAC.NO/time/all/version/199704/data>
 
-## Jsonstat Queries (BETA)
-Data can be retrieved in Jsonstat format.
+## JSON-stat Queries (BETA)
+Data can be retrieved in JSON-stat format.
 
-### Sample Request Format: Jsonstat Queries
-<http://api.worldbank.org/v2/sources/57/Country/ALB/Series/AG.AGR.TRAC.NO/Time/all/Version/199704/data?format=jsonstat>
+### Sample Request Format: JSON-stat Queries
+<http://api.worldbank.org/v2/sources/57/country/ALB/series/AG.AGR.TRAC.NO/time/all/version/199704/data?format=jsonstat>

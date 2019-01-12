@@ -5,27 +5,27 @@ output:
     keep_md: true
 ---
 
-Topics are high level categories to which all indicators are mapped. Agriculture & Rural Development, Education, and Trade are examples.
+Topics are high level categories to which all indicators are mapped. Agriculture & Rural Development, Education, and Trade are examples of topics.
 
 ### Sample Topic API Requests ###
 
 To list all topics:
 
-<http://api.worldbank.org/v2/topics>
+<http://api.worldbank.org/v2/topic>
 
-To list specific topics, separating multiple codes with semicolons (;):
+To list specific topics, separating multiple codes with semicolons (`;`):
 
-<http://api.worldbank.org/v2/topics/5>  
-<http://api.worldbank.org/v2/topics/5;11>
+<http://api.worldbank.org/v2/topic/5>  
+<http://api.worldbank.org/v2/topic/5;11>
 
 To list all indicators under a specified topic:
 
-<http://api.worldbank.org/v2/topics/5/indicators> or:  
-<http://api.worldbank.org/v2/indicators?topic=5>
+<http://api.worldbank.org/v2/topic/5/indicator> or:  
+<http://api.worldbank.org/v2/indicator?topic=5>
 
 ### Sample Response Format: Topic Query
 
-**XML:** <http://api.worldbank.org/v2/topics/>
+**XML:** <http://api.worldbank.org/v2/topic/>
 
 ```xml
 <wb:topics xmlns:wb="http://www.worldbank.org"  page="1"  pages="1"  per_page="50"  total="21" >
@@ -37,7 +37,7 @@ To list all indicators under a specified topic:
     <wb:value>Aid Effectiveness</wb:value>
 ```
 
-**JSON:** <http://api.worldbank.org/v2/topics?format=json>
+**JSON:** <http://api.worldbank.org/v2/topic?format=json>
 
 ```json
 [

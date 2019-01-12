@@ -7,41 +7,41 @@ output:
 
 The Indicators API supports two basic ways to build queries: a URL based structure and an argument based structure. For example, the following two requests will return the same data, a list of countries with income level classified as low income:
 
-* Argument based: <http://api.worldbank.org/V2/countries?incomeLevel=LIC>
-* URL based: <http://api.worldbank.org/V2/incomeLevels/LIC/countries>
+* Argument based: <http://api.worldbank.org/V2/country?incomeLevel=LIC>
+* URL based: <http://api.worldbank.org/V2/incomeLevel/LIC/country>
 
 ## Query Strings
-Requests support the following query strings.
+The API support the following query strings in requests.
 
 **Date and Date-Range:** Date-range by year, month or quarter that scopes the result-set.
 
 Examples:
 
-  * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000>
-  * <http://api.worldbank.org/v2/countries/chn;bra/indicators/DPANUSSPB?date=2012M01>
+  * <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2000>
+  * <http://api.worldbank.org/v2/country/chn;bra/indicator/DPANUSSPB?date=2012M01>
 
-A range is indicated using the colon (:) separator.
+A range is indicated using the colon (`:`) separator.
 
 Examples:
 
-  * <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?date=2000:2001>
-  * <http://api.worldbank.org/v2/countries/chn;bra/indicators/DPANUSSPB?date=2012M01:2012M08>
-  * <http://api.worldbank.org/v2/countries/CHL/indicators/DP.DOD.DECD.CR.BC.CD?date=2013Q1:2013Q4>
+  * <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2000:2001>
+  * <http://api.worldbank.org/v2/country/chn;bra/indicator/DPANUSSPB?date=2012M01:2012M08>
+  * <http://api.worldbank.org/v2/country/CHL/indicator/DP.DOD.DECD.CR.BC.CD?date=2013Q1:2013Q4>
 
-**Requests additionally support year-to-date values (YTD), which is useful for querying high frequency data.**
+Requests additionally support year-to-date values (YTD), which is useful for querying high frequency data.
 
-* Example: <http://api.worldbank.org/v2/countries/chn/indicators/DPANUSSPB?date=YTD:2013>
+* Example: <http://api.worldbank.org/v2/country/chn/indicator/DPANUSSPB?date=YTD:2013>
 
-**Output Format:** API supports the following four output formats.
+**Output Format:** The API supports the following four output formats.
 
-* XML format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=xml>
-*	JSON format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=json>
-*	JSONP format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonP&prefix=Getdata>
-  - _Note: For JSONP format, 'prefix' parameter must be specified._
-* JSON-stat format: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?format=jsonstat>
+* XML format: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=xml>
+*	JSON format: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json>
+*	JSONP format: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=jsonP&prefix=Getdata>
+  - _Note: For JSONP format, `prefix` parameter must be specified._
+* JSON-stat format: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=jsonstat>
     - _Note: Refer <https://json-stat.org/> for more details._
 
-**Download Format:** API supports the following three download formats.
+**Download Format:** The API supports the following three download formats.
 
 *	CSV Download (Downloads to ZIP file): <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=csv>
 *	XML Download (Downloads to ZIP file): <http://api.worldbank.org/v2/country/ind/indicator/AG.AGR.TRAC.NO?source=2&downloadformat=xml>
@@ -50,13 +50,13 @@ Examples:
 
 **Page:** For paging through large result-sets. This allows users to indicate the page number requested from the record-set.
 
-* Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?page=2>
+* Example: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?page=2>
 
 **Per_page:** For determining the number of results per page. The default setting is 50 results per page.
 
-* Example: <http://api.worldbank.org/v2/countries/all/indicators/SP.POP.TOTL?per_page=25>
+* Example: <http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?per_page=25>
 
-**MRV:** fetches most recent values based on the number specified.
+**MRV:** Fetches most recent values based on the number specified.
 
 * Example:  <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO?mrv=5>
 
@@ -66,13 +66,13 @@ Examples:
 
 **Gap-fill:** (Y/N) Works with MRV. Fills values, if not available, by back tracking to the next available period (max number of periods back tracked will be limited by MRV number)
 
-* Example: <http://api.worldbank.org/v2/en/countries/ind;chn/indicators/DPANUSSPF?MRV=7&Gapfill=Y>
+* Example: <http://api.worldbank.org/v2/en/country/ind;chn/indicator/DPANUSSPF?mrv=7&gapfill=Y>
 
 **Frequency:** For fetching quarterly (Q), monthly (M) or yearly (Y) values. This feature currently works along with MRV. This query string is useful for querying high frequency data.
 
-* Example: <http://api.worldbank.org/v2/en/countries/ind;chn/indicators/DPANUSSPF?MRV=7&frequency=M>
+* Example: <http://api.worldbank.org/v2/en/country/ind;chn/indicator/DPANUSSPF?mrv=7&frequency=M>
 
-**Multiple Indicators Usage:** Multiple indicators data can be queried from a single data source by providing the indicator codes separated by `";"` (semicolon), as well as the source ID.
+**Multiple Indicators:** Data for multiple indicators can be queried from a single data source by providing the indicator codes separated by `";"` (semicolon), as well as the source ID.
 
 * Example:
   <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO;SP.POP.TOTL?source=2>
@@ -86,67 +86,68 @@ _Note: A maximum of 60 indicators can be used. A maximum of 1,500 characters are
 
 ## Languages
 
-The following returns all of the supported languages by World bank API v2: <http://api.worldbank.org/v2/languages>
+The following query returns all the languages supported by the World bank API v2: <http://api.worldbank.org/v2/languages>
 
 When no language is specified English is assumed. The following languages are available:
 
 | Code | Language |
-|--|--|
+|---|---|
 |en| English |
 |es | Spanish |
 |fr | French |
 |ar | Arabic |
 |zh | Chinese |
 
-
 ### Local Languages
-
-Some countries are translated in their local languages. Any call to the API can be prefixed with a language code to retrieve localized results. The following local languages are available:
+Local language translations are available for some countries. Any call to the API can be prefixed with a language code to retrieve localized results where available. The following local languages are available:
 
 |Code|Language|
-|--|--|
-|bg | Bulgarian|
-|de	| German|
+|---|---|
+|bg	|Bulgarian|
+|de	|German|
 |hi	|Hindi|
-|id	| Indonesian|
-|ja	| Japanese|
-|km	| Khmer|
-|ko	| Korean|
-|mk	| Macedonian|
-|mn	| Mongolian|
-|pl	| Polish|
-|pt	| Portuguese|
-|ro	| Romanian|
-|ru	| Russian|
-|sq	| Albanian|
-|th	| Thai|
-|tr	| Turkish|
-|uk	| Ukrainian|
-|vi	| Vietnamese|
+|id	|Indonesian|
+|ja	|Japanese|
+|km	|Khmer|
+|ko	|Korean|
+|mk	|Macedonian|
+|mn	|Mongolian|
+|pl	|Polish|
+|pt	|Portuguese|
+|ro	|Romanian|
+|ru	|Russian|
+|sq	|Albanian|
+|th |Thai|
+|tr |Turkish|
+|uk |Ukrainian|
+|vi |Vietnamese|
 
-For example, to retrieve the country name of Vietnam in Vietnamese language you would use the following query: <http://api.worldbank.org/v2/vi/country/vir>
+A backslash followed by the country code after `http://api.worldbank.org/v2/` in an API call gives localized results.  
 
-_Note: The translated local language country names are not available for all the countries._
+For example, to retrieve the country name of Vietnam in Vietnamese language you would use the following query:
+<http://api.worldbank.org/v2/vi/country/vn>
+
+*Note: The translated local language country and region names are not available for all countries.*
 
 ## Delimiters
-**Range:** Use a colon ":" to indicate a range (for numeric values only). For example, "5:10" calls numeric value range from 5 to 10.
+**Range:** Use a colon `:` to indicate a range (for numeric values only). For example, `5:10` specifies the numeric value range from 5 to 10.
 
 * Example: <http://api.worldbank.org/v2/country/chn;ago/indicator/AG.AGR.TRAC.NO;SP.POP.TOTL?source=2&date=2000:2010>
 
-** Logical AND:** Use a semicolon ";" to represent logical "AND" For example, "us;ge" calls United States AND Georgia.
+**Logical AND:** Use a semicolon `;` to represent logical "AND". For example, `us;ge` specifies the United States AND Georgia.
 
 * Example: <http://api.worldbank.org/v2/country/us;ge/indicator/AG.AGR.TRAC.NO>
 
-## Examples
+## Responses
 Retrieving indicator data about countries is one common use of the API.
 
 For example, the following is a call for 2006 data on the GDP of Brazil:
-<http://api.worldbank.org/v2/countries/br/indicators/NY.GDP.MKTP.CD?date=2006>
+<http://api.worldbank.org/v2/country/br/indicator/NY.GDP.MKTP.CD?date=2006>
 
 
 ### Response Format
 
-By default, all requests will respond with valid XML. To receive the response in JSON format, provide "format=json" in any request.
+By default, all requests will respond with valid XML. To receive the response in JSON format, provide `format=json` in any request.
 
 ### Sample valid request response:
 
@@ -178,7 +179,7 @@ By default, all requests will respond with valid XML. To receive the response in
 </wb:error>
 ```
 
-_Note: See "Error Codes" for a full listing of possible errors._
+_Note: See [Error Codes](https://datahelpdesk.worldbank.org/knowledgebase/articles/898620-api-error-codes) for a full listing of possible errors._
 
 
 ## Limitations

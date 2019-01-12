@@ -6,45 +6,45 @@ output:
 
 ---
 
-Use SDMX REST API to programmatically access databases that are available in Databank. At present the WDI (World Development Indicators) dataset is available through API, and we are planning to add more datasets soon. If you are interested in a specific dataset that are currently available in <a href="http://databank.worldbank.org/data/home.aspx">Databank</a>, please let us know by email at data@worldbank.org.
+Use the SDMX REST API to programmatically access databases that are available in Databank. At present the World Development Indicators (WDI) dataset is available through API, and we are planning to add more datasets soon. If you are interested having SDMX access to  a specific dataset currently available in <a href="http://databank.worldbank.org/data/home.aspx">Databank</a>, please let us know by email at data@worldbank.org.
 
-In SDMX API, users can give various dimensions as a parameter in the URL like series code, country code, or frequency and time range etc., and result data can be downloaded as XML or JSON.
+In the SDMX API, users can give various dimensions as a parameter in the URL like series code, country code, or frequency and time range etc., and the resulting data can be downloaded as XML or JSON.
 
-## WDI (World development Indicators)
+## World development Indicators (WDI)
 
-World Development Indicators (WDI) is the primary World Bank collection of development indicators, compiled from officially recognized international sources. It presents the most current and accurate global development data available, and includes national, regional and global estimates. WDI data can be downloaded by specifying values for the below dimensions 
+World Development Indicators (WDI) is the primary World Bank collection of development indicators, compiled from officially recognized international sources. It presents the most current and accurate global development data available, and includes national, regional and global estimates. WDI data can be downloaded by specifying values for the dimensions below: 
 
 ### Series
-Series code. Refer WDI DSD for list of series name and code 
+Series code. Refer to the WDI DSD for a list of series names and codes. 
 
 ### Country
-ISO Country code
+ISO Country code.
 
 ### Time
-Specify a single or range of year
+Specify a single year or range of years.
 
 ## Limitation on Data Request 
 
-In order to avoid server overload, the request for entire database is not possible in one query so the data calls are restricted to 15000 data points per call which includes null values too. 
+In order to avoid server overload, requests for the entire database are not possible in one query. Data calls are restricted to 15,000 data points per call including null values. 
 
 ## Basic Call structure
 
-There are two types of request: One request type is to retrieve the metadata and other is to retrieve data. The following SDMX response formats are supported in this API.
+There are two types of request - one request type is to retrieve the metadata, and the other is to retrieve data. The following SDMX response formats are supported in this API.
 
 ### SDMX-ML 2.1 generic schema: 
-This is the default format. Please note that generic format output size will be more when compare to other formats.
+This is the default format. Please note that generic format output size will be greater when compared to other formats.
 
 ### SDMX-ML 2.1 structure specific schema: 
-The structure specific schema is more suited for processing of large data. To get the response in this format, modify the HTTP request header field  "Accept: application/vnd.sdmx.structurespecificdata+xml" on the SDMX data query request. 
+The structure specific schema is more suited for processing of large data. To get responses in this format, modify the HTTP request header field  `Accept: application/vnd.sdmx.structurespecificdata+xml` on the SDMX data query request. 
 
 ### JSON Format: 
-To get the data in JSON format, modify the HTTP request header field "Accept: application/vnd.sdmx.data+json;version=1.0.0-wd" on the SDMX data query request.
+To get the data in JSON format, modify the HTTP request header field `Accept: application/vnd.sdmx.data+json;version=1.0.0-wd` on the SDMX data query request.
 
 ## Metadata request
 This section explains the call to get DataFlow, Code List and DSD.
 
 ### Data Flow 
-This end-point retrieves the unique dataset code for World bank dataset.  
+This end-point retrieves the unique dataset code for World Bank datasets.  
 
 * *URL:* 
   
@@ -77,7 +77,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
 
 * *Sample request and Output*
 
-    + URL
+    + URL:
     <http://api.worldbank.org/v2/sdmx/rest/dataflow>
     
     + Response
@@ -85,7 +85,7 @@ This end-point retrieves the unique dataset code for World bank dataset.
     
 ### Code List 
 
-<b>This endpoint retrieves the code list for the WDI dataset. </b>
+This endpoint retrieves the code list for the WDI dataset.
 
 * URL: 
     
@@ -115,10 +115,10 @@ This end-point retrieves the unique dataset code for World bank dataset.
         
 * *Sample request and Output*
     
-      + URL
+   + URL:
       <http://api.worldbank.org/v2/sdmx/rest/codelist/wb>
     
-      + Response:
+   + Response:
       ![Code List Sample Output](https://databank.worldbank.org/data/download/site-content/kb/api/Code_List_Sample_Output.png)
     
      
@@ -173,8 +173,8 @@ This API retrieves the Data Structure Definition (DSD) for the WDI dataset
 
 # Data Request
 
-Data calls are used to download data in Generic, Compact and JSON format. Users can request data for a country, series over a period, however data points in a single query cannot exceed more than 15000 data points. 
-In data calls, the dimensions are separated by "." dot as shown below
+Data calls are used to download data in Generic, Compact and JSON format. Users can request data for a country and series over a period, however data points in a single query cannot exceed more than 15,000 data points. 
+In data calls, the dimensions are separated by `.` dot as shown below
 
 * *URL:*
 
@@ -188,17 +188,17 @@ In data calls, the dimensions are separated by "." dot as shown below
 
 * *URL Parameter:*
     
-    + Dataset id: Dataset id, "WDI"
+    + Dataset id: Dataset id, for example, "WDI"
     
     + Freq:  The possible value for frequency is "A". If no value is specified, it is considered as all frequencies.  
     
-    + Series: Series code. Refer WDI DSD for list of series name and code
+    + Series: Series code. Refer WDI DSD for list of series names and codes.
     
-    + Country: ISO Country code 
+    + Country: ISO Country code. 
     
-    + StartPeriod: This is a year parameter and can have the value from 1960 onwards. If ignored, data for available years will be returned. 
+    + StartPeriod: This is a year parameter and can have values from 1960 onwards. If ignored, data for all available years will be returned. 
     
-    + EndPeriod: This is a year parameter and can have the value from 1960 onwards. If ignored, the data available from the start period to the latest available years will be returned. 
+    + EndPeriod: This is a year parameter and can have values from 1960 onwards. If ignored, all data available from the start period to the latest available years will be returned. 
 
 * *Response Format:*
 
@@ -216,26 +216,26 @@ In data calls, the dimensions are separated by "." dot as shown below
 
 ### Sample Request: 
 
-To request one country, one series  and a year
+To request one country, one series  and one year:
 
     <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2011&endPeriod=2011>
 
-To request all countries, one series and a year
+To request all countries, one series and one year:
 
     <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL./?startperiod=2011&endPeriod=2011>
 
-To request all series, one country and a year 
+To request all series, one country and one year: 
 
     <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A..AFG/?startperiod=2011&endPeriod=2011>
 
 
-To request one country, one series and a range of year
+To request one country, one series and a range of years:
 
     <http://api.worldbank.org/v2/sdmx/rest/data/WDI/A.SP_POP_TOTL.AFG/?startperiod=2010&endPeriod=2015>
 
 
 
-<b>Sample Response Format: </b>
+### Sample Response Format:
 
 
 SDMX-ML 2.1 generic schema
@@ -254,7 +254,7 @@ JSON Format
 
 
 The response contains the result value of the Country, Series, Time and Frequency combination.
-If we are not specifying any of the dimension in the request URL, all the data related to that dimension will be retrieved in relation with the other dimensions.
+If any of the dimensions are not specified in the request URL, all the data related to that dimension will be retrieved in relation to the other dimensions.
 
 
 Error Response: 

@@ -16,15 +16,15 @@ Indicators represent data like total population, gross national income, energy u
 * Topic ID
 * Topic Name
 
-## Sample Request Format: Indicator Query
+### Sample Request Format: Indicator Query
 
-To request all indicators: <http://api.worldbank.org/v2/indicators>
+To request all indicators: <http://api.worldbank.org/v2/indicator>
 
-To request the indicator GDP (Current US$) using its indicator code, "NY.GDP.MKTP.CD": <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD>
+To request the indicator GDP (Current US$), use its indicator code, NY.GDP.MKTP.CD: <http://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD>
 
-## Sample Response Format: Indicator Query
+### Sample Response Format: Indicator Query
 
-* XML: <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD?format=xml>
+* XML: <http://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD?format=xml>
 
 ```xml
 <wb:indicators xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="1">
@@ -72,12 +72,12 @@ To request the indicator GDP (Current US$) using its indicator code, "NY.GDP.MKT
 ]
 ```
 
-## Indicators Belonging to Multiple Sources
+### Indicators Belonging to Multiple Sources
 
-Sometimes indicators belong to multiple sources. To find an indicator from a specific source, the indicator's source ID must be provided as query parameter.
+Sometimes indicators belong to multiple sources. To find an indicator from a specific source, the indicator's source ID must be provided as a query parameter.
 
 For example:
 
-* <http://api.worldbank.org/v2/indicators/NY.GDP.MKTP.CD?source=11>
-* <http://api.worldbank.org/v2/source/11/indicators/NY.GDP.MKTP.CD>
+* <http://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD?source=11>
+* <http://api.worldbank.org/v2/source/11/indicator/NY.GDP.MKTP.CD>
 

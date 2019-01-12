@@ -26,24 +26,6 @@ World Bank APIs provide access to various types of data and databases:
   [Learn More](https://datahelpdesk.worldbank.org/knowledgebase/articles/902061)
 
 
-## About the Indicators API ##
-
-The World Bank Indicators API provides access to nearly 16,000 time series indicators.
-Most of these indicators are available online through tools such as [Databank](https://databank.worldbank.org) and
-the [Open Data website](https://data.worldbank.org). The API provides programmatic access to this same data.
-Many data series date back over 50 years, and can be used to create interesting applications.
-
-The Indicators API provides access to over 45 databases, including:
-
-* [World Development Indicators](http://datatopics.worldbank.org/world-development-indicators)
-* [International Debt Statistcs](https://data.worldbank.org/products/ids)
-* [Doing Business](http://www.doingbusiness.org/)
-* [Human Capital Index](http://www.worldbank.org/en/publication/human-capital)
-* [Subnational Poverty](http://databank.worldbank.org/data/reports.aspx?source=subnational-poverty)
-* And [many more](https://api.worldbank.org/v2/sources)
-
-Get started by reading about the [Basic Call Structure](https://datahelpdesk.worldbank.org/knowledgebase/articles/898581).
-
 ## Applications ##
 
 You are encouraged to develop software applications that utilize and add

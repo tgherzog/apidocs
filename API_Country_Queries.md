@@ -5,7 +5,9 @@ output:
     keep_md: true
 ---
 
-To list all countries: <http://api.worldbank.org/v2/countries>
+## Requesting Country Data
+
+To list all countries: <http://api.worldbank.org/v2/country>
 
 The following information will appear, when available, in the response when using this country query through the World Bank API:
 
@@ -19,17 +21,17 @@ The following information will appear, when available, in the response when usin
 *	Longitude
 *	Latitude
 
-## Sample Request Format: Country Query
-For XML format: <http://api.worldbank.org/v2/countries/br>
+### Sample Request Format: Country Query
+For XML format: <http://api.worldbank.org/v2/country/br>
 
-For JSON format: <http://api.worldbank.org/v2/countries/br?format=json>
+For JSON format: <http://api.worldbank.org/v2/country/br?format=json>
 
 _Note: "br" is the two-letter ISO code for Brazil._
 
 ### Sample Response Format: Country Query
 
 * XML:
-<http://api.worldbank.org/v2/countries/br>
+<http://api.worldbank.org/v2/country/br>
 
 ```xml
 <wb:countries xmlns:wb="http://www.worldbank.org" page="1" pages="1" per_page="50" total="1">
@@ -47,7 +49,7 @@ _Note: "br" is the two-letter ISO code for Brazil._
 </wb:countries>
 ```
 
-* JSON: <http://api.worldbank.org/v2/countries/br?format=json>
+* JSON: <http://api.worldbank.org/v2/country/br?format=json>
 
 ```json
 [
@@ -90,4 +92,4 @@ _Note: "br" is the two-letter ISO code for Brazil._
   ]
 ```
 
-_Note: The API returns ISO 3 and ISO 2 codes wherever present.  If ISO codes are not available, it returns WB 3 and WB 2 codes. For example, Channel Islands return WB 3 code CHI and WB2 code JG_
+_Note: The API returns ISO 3 and ISO 2 codes wherever present.  If ISO codes are not available, it returns WB 3 and WB 2 codes. For example, Channel Islands return WB 3 code CHI and WB2 code JG._

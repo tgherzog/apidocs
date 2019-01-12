@@ -12,12 +12,12 @@ otherwise specify a country.
 The following two examples retrieve GDP data for Brazil (BRA)
 and the Latin America and Caribbean region as a whole (LCN):
 
-<http://api.worldbank.org/v2/countries/BRA/indicators/NY.GDP.MKTP.CD>  
-<http://api.worldbank.org/v2/countries/LCN/indicators/NY.GDP.MKTP.CD>
+<http://api.worldbank.org/v2/country/BRA/indicator/NY.GDP.MKTP.CD>  
+<http://api.worldbank.org/v2/country/LCN/indicator/NY.GDP.MKTP.CD>
 
 ## Aggregate Definitions in the API ##
 
-To get the definition list of all Region codes:
+To get the definition list for all Region codes:
 
 **XML**
 
@@ -59,14 +59,14 @@ To get the definition list of all Region codes:
 ]
 ```
 
-To get the definition list of all Income Level codes:  
+To get the list of all Income Level code definitions:  
 <http://api.worldbank.org/v2/incomelevel>
 
-To get the definition list of all Lending Type codes:  
+To get the list of all Lending Type code definitions:  
 <http://api.worldbank.org/v2/lendingtypes>
 
-Or you can retrieve a select list of regions, income levels or lending types,
-separating multiple codes with semicolons (;):
+Or you can retrieve a list of definitions for specific regions, income levels or lending types,
+separating multiple codes with semicolons (`;`):
 
 <http://api.worldbank.org/v2/region/LCN>  
 <http://api.worldbank.org/v2/incomelevel/UMC>  
