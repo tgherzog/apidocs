@@ -1,5 +1,5 @@
-# theme: jekyll-theme-modernist
-highlighter: none
-kramdown:
-    syntax_highlighter_opts:
-        disable: true
+# this file contains options for generating Github pages and is
+# likely incompatabible with local environments in minor ways
+# local builds should use:
+# jekyll build --config _local.yml
+theme: jekyll-theme-modernist
